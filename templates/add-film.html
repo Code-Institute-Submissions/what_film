@@ -1,0 +1,55 @@
+{% extends 'base.html' %} {% block content %}
+<h3>Add Task</h3>
+<div class="row">
+    <form action="{{ url_for('insert_task') }}" method="POST"  class="col s12">
+        <div class="row">
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">poll</i>
+                    <select id="category" name="category_name">
+                  <option value="" disabled selected>Choose Genre</option>
+                  {% for gen in genre %}
+                      <option value="{{gen.genre_name}}">{{gen.genre_name}}</option>
+                  {% endfor %}
+                </select>
+                    <label>Genre</label>
+                </div>
+            </div>
+            <div class="input-field col s12">
+                <i class="material-icons prefix">assignment</i>
+                <input id="film_title" name="film_title" type="text">
+                <label for="icon_prefix">Film Title</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">subject</i>
+                <textarea name="film_description" id="film_description" class="materialize-textarea"></textarea>
+                <label for="icon_telephone">Film Synapsis</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">today</i>
+                <input id="release_date" name="release_date" type="text" class="datepicker">
+                <label for="icon_prefix">Release Date</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="">
+                <label>
+                  <input name="cover" type="file" class="filepond">
+                  <span class="lever"></span>
+                  Upload Film Cover
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <button class="btn waves-effect waves-light" type="submit" name="action">Add Film
+                <i class="material-icons right">playlist_add</i>
+             </button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
