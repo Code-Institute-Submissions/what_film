@@ -1,99 +1,192 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for, request
+from flask import Flask, render_template, flash, redirect, request, session, url_for, request
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+import bcrypt
 
 app = Flask(__name__)
-app.config["MONGO_DBNAME"] = 'task_manager'
+app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
+app.config["MONGO_DBNAME"] = 'whatFilmDB'
 app.config["MONGO_URI"] = 'mongodb+srv://lewejuice:Leahlh1994@myfirstcluster.ztxrz.mongodb.net/whatFilmDB?retryWrites=true&w=majority'
 
 mongo = PyMongo(app)
 
-
 @app.route('/')
-@app.route('/get_tasks')
-def get_tasks():
-    return render_template("tasks.html", 
-                           tasks=mongo.db.tasks.find())
+@app.route('/home')
+def home():   
+    if 'username' in session:
+        user = 'username' 
+    return render_template("index.html")
+
+@app.route('/login_button')
+def login_button():  
+    return render_template("login.html")  
+
+@app.route('/login', methods=['POST', 'GET'])
+def login():
+    users = mongo.db.users
+    logged_user = users.find_one({"username": request.form["username"]})
+    if logged_user:
+        if bcrypt.hashpw(request.form['password'].encode('utf-8'), logged_user['password']) == logged_user['password']:
+            session["username"] = request.form["username"]
+            flash("Welcome back " + session["username"])
+            return redirect(url_for("home"))
+    flash("Invalid Username/Password")
+    return redirect(url_for("login_button"))
+
+@app.route('/logout')
+def logout():
+    session.clear()
+    flash("You are logged out")
+    return redirect(url_for("home"))
+
+@app.route('/account', methods=['POST', 'GET'])
+def account():   
+    if 'username' in session:
+        user = mongo.db.users
+        active_user = user.find({"username": session['username']})
+        return render_template("account.html", account = active_user)
+    return render_template("login.html")
+
+@app.route('/delete_account', methods=['POST', 'GET'])
+def delete_account():   
+    users = mongo.db.users
+    reviews = mongo.db.reviews
+    logged_user = users.find_one({"username": session['username']})
+    if bcrypt.hashpw(request.form['old_password'].encode('utf-8'), logged_user['password']) == logged_user['password']:
+        myquery = { "username": session['username'] }
+        users.delete_one(myquery)
+        reviews.delete_many(myquery)
+        session.clear()
+        flash("Account Deleted")
+        return redirect(url_for("home"))
+    flash("Incorrect Password")
+    return redirect(url_for("account"))
 
 
-@app.route('/add_task')
-def add_task():
-    return render_template('addtask.html',
-                           categories=mongo.db.categories.find())
+@app.route('/update_account', methods=['POST', 'GET'])
+def update_account():
+    users = mongo.db.users
+    logged_user = users.find_one({"username": session['username']})
+    if bcrypt.hashpw(request.form['old_password'].encode('utf-8'), logged_user['password']) == logged_user['password']:
+        hashpass = bcrypt.hashpw(request.form["new_password"].encode("utf-8"), bcrypt.gensalt())
+        oldhashpass = bcrypt.hashpw(request.form["old_password"].encode("utf-8"), bcrypt.gensalt())
+        if len(request.form["new_username"]) >= 1 and len(request.form["new_email"]) >= 1 and len(request.form["new_password"]) >= 1:
+            users.update({'username': session['username']},
+            {
+                'username': request.form.get('new_username'),
+                'email': request.form.get('new_email'),
+                'password': hashpass
+            })
+            session.clear()
+            flash("Your account details have been updated")
+            return redirect(url_for("logout"))
+        if len(request.form["new_username"]) >= 1 and len(request.form["new_email"]) >= 1 and len(request.form["new_password"]) < 1:
+            users.update({'username': session['username']},
+            {
+                'username': request.form.get('new_username'),
+                'email': request.form.get('new_email'),
+                'password': oldhashpass
+            })
+            session.clear()
+            flash("Your account details have been updated")
+            return redirect(url_for("logout"))
+        if len(request.form["new_username"]) >= 1 and len(request.form["new_email"]) < 1 and len(request.form["new_password"]) >= 1:
+            users.update({'username': session['username']},
+            {
+                'username': request.form.get('new_username'),
+                'email': request.form.get('old_email'),
+                'password': hashpass
+            })
+            session.clear()
+            flash("Your account details have been updated")
+            return redirect(url_for("login"))
+        if len(request.form["new_username"]) < 1 and len(request.form["new_email"]) >= 1 and len(request.form["new_password"]) >= 1:
+            users.update({'username': session['username']},
+            {
+                'username': session['username'],
+                'email': request.form.get('new_email'),
+                'password': hashpass
+            }) 
+            flash("Your account details have been updated")
+            return redirect(url_for("account"))
+        if len(request.form["new_username"]) >= 1 and len(request.form["new_email"]) < 1 and len(request.form["new_password"]) < 1:
+            users.update({'username': session['username']}, 
+            {
+                'username': request.form.get('new_username'),
+                'email': request.form.get('old_email'),
+                'password': oldhashpass
+            })
+            session.clear()
+            flash("Your account details have been updated")
+            return redirect(url_for("logout"))
+        if len(request.form["new_username"]) < 1 and len(request.form["new_email"]) >= 1 and len(request.form["new_password"]) < 1:
+            users.update({'username': session['username']}, 
+            {
+                'username': session['username'],
+                'email': request.form.get('new_email'),
+                'password': oldhashpass
+            })  
+            flash("Your account details have been updated")
+            return redirect(url_for("account"))
+        if len(request.form["new_username"]) < 1 and len(request.form["new_email"]) < 1 and len(request.form["new_password"]) >= 1:
+            users.update({'username': session['username']}, 
+            {
+                'username': session['username'],
+                'email': request.form.get('old_email'),
+                'password': hashpass
+            })
+            flash("Your account details have been updated")
+            return redirect(url_for("account"))
+    flash("Incorrect Password")
+    return redirect(url_for("account"))
 
+@app.route('/register', methods=['POST', 'GET'])
+def register():
+    if request.method == 'POST':
+        users = mongo.db.users
+        existing_user = users.find_one({"username": request.form["username"]})
 
-@app.route('/insert_task', methods=['POST'])
-def insert_task():
-    tasks =  mongo.db.tasks
-    tasks.insert_one(request.form.to_dict())
-    return redirect(url_for('get_tasks'))
+        if existing_user is None:
+            hashpass = bcrypt.hashpw(request.form["password"].encode("utf-8"), bcrypt.gensalt())
+            session["username"] = request.form["username"]
+            existing_email = users.find_one({"email" : request.form["u_email"]})
 
+            if existing_email is None:
+                users.insert({"username" : request.form["username"], "password" : hashpass, "email" : request.form["u_email"]})
+                session["email"] = request.form["u_email"]
+                return redirect(url_for("home"))
+            flash("That email already exists!")
+            return render_template("register.html")
+        flash("That username already exists!")
+        return render_template("register.html")
 
-@app.route('/edit_task/<task_id>')
-def edit_task(task_id):
-    the_task =  mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
-    all_categories =  mongo.db.categories.find()
-    return render_template('edittask.html', task=the_task,
-                           categories=all_categories)
+    return render_template("register.html")
 
+@app.route('/movie/<id>')
+def movie_page(id):
+    reviews = mongo.db.reviews
+    review_id = reviews.find({"movie_id": id})
+    for reviews in review_id:
+        return render_template("test.html", id=id, review_list=review_id, reviews=reviews)
+    return render_template("test.html", id=id, review_list=review_id)   
 
-@app.route('/update_task/<task_id>', methods=["POST"])
-def update_task(task_id):
-    tasks = mongo.db.tasks
-    tasks.update( {'_id': ObjectId(task_id)},
-    {
-        'task_name':request.form.get('task_name'),
-        'category_name':request.form.get('category_name'),
-        'task_description': request.form.get('task_description'),
-        'due_date': request.form.get('due_date'),
-        'is_urgent':request.form.get('is_urgent')
-    })
-    return redirect(url_for('get_tasks'))
+@app.route('/review', methods=['POST', 'GET'])
+def review():
+    reviews_db = mongo.db.reviews
+    if 'username' in session:
+        user = session['username']
+        reviews_db.insert({
+            "username": user,
+            "movie_id": request.form["id"],
+            "review": request.form["review"],
+            "rating": request.form["rating"]
+        })
+        flash("Your review has been posted!")
+        return redirect(url_for("home"))
+    flash("Please login to write a review")
+    return render_template("login.html")
 
-
-@app.route('/delete_task/<task_id>')
-def delete_task(task_id):
-    mongo.db.tasks.remove({'_id': ObjectId(task_id)})
-    return redirect(url_for('get_tasks'))
-
-
-@app.route('/get_categories')
-def get_categories():
-    return render_template('categories.html',
-                           categories=mongo.db.categories.find())
-
-
-@app.route('/delete_category/<category_id>')
-def delete_category(category_id):
-    mongo.db.categories.remove({'_id': ObjectId(category_id)})
-    return redirect(url_for('get_categories'))
-
-
-@app.route('/edit_category/<category_id>')
-def edit_category(category_id):
-    return render_template('editcategory.html',
-    category=mongo.db.categories.find_one({'_id': ObjectId(category_id)}))
-
-
-@app.route('/update_category/<category_id>', methods=['POST'])
-def update_category(category_id):
-    mongo.db.categories.update(
-        {'_id': ObjectId(category_id)},
-        {'category_name': request.form.get('category_name')})
-    return redirect(url_for('get_categories'))
-
-
-@app.route('/insert_category', methods=['POST'])
-def insert_category():
-    category_doc = {'category_name': request.form.get('category_name')}
-    mongo.db.categories.insert_one(category_doc)
-    return redirect(url_for('get_categories'))
-
-
-@app.route('/add_category')
-def add_category():
-    return render_template('addcategory.html')
 
 
 if __name__ == '__main__':

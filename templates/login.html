@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% block content %}
+<div class="row topper form-container">
+    <form method="POST" action="{{ url_for('login') }}" class="col s12">
+      <div class="row">
+        <div class="input-field center login-input">
+          <input placeholder="Username" id="user_name" name="username" type="text" class="validate">
+          <label for="username">Username</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="center input-field login-input">
+          <input id="password" type="password" name="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <div class="row">
+          <button class="button center btn waves-effect waves-light" type="submit" name="action">Login</button>
+      </div>   
+    </form>
+    <div>    
+        <a href="{{url_for('register')}}">Register now!</a>
+    </div> 
+</div>
+
+{% endblock %}

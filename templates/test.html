@@ -1,0 +1,65 @@
+{% extends 'base.html' %} {% block content %}
+    <div id="id-container"><p id="movie-id">{{ id }}</p></div>
+    <div class="col s12 center topper" id="title-container"></div>
+    <div class="col s12 center" id="release-container"></div>
+    <div class="row">
+        <div class="col s12 l6 center" id="img-container"></div>
+        <div class="col s12 l6 center" id="plot-container"></div>
+        <div class="col s12 l6 center" id="rating-container"></div>
+    </div>
+    <div class="row">
+        <div class="col s12 center"><button class="button review-btn center btn waves-effect waves-light" id="review-button">Write a review</button></div>
+        <div class="col s12 center"><h2>Reviews</h2></div>
+        <div class="col s12 center" id="reviews">
+            <table class="responsive-table">
+                <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Review</th>
+                    <th>Rating</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                {% if reviews|length %}
+                    {% for reviews in review_list%}
+                    <tr>
+                        <td>{{ reviews.username }}</td>
+                        <td>{{ reviews.review }}</td>
+                        <td>{{ reviews.rating }}</td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td><h3>No Reviews</h3></td>
+                    </tr>
+                {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="review-modal" class="form-container center">
+        <form method="POST" action="{{ url_for('review') }}" class="col s12 center modal-content">
+            <div class="row">
+                <h3>Write review</h3>
+            </div>
+            <div class="row">
+                <div class="hidden input-field col s12">
+                    <input name="id" type="id" value="{{ id }}">
+                </div>
+                <div class="input-field col s12">
+                    <textarea class="review-input" name="review" rows="10" cols="30" placeholder="Write your review here..."></textarea>
+                </div>
+                <div>
+                    <label for="rating">Rate this movie out of 10:</label>
+                    <input type="number" id="rating" name="rating" min="1" max="10">
+                </div>
+            </div>
+            <div class="row">
+                <button class="button btn waves-effect waves-light" type="submit" name="submit">Submit</button>
+            </div>
+        </form>
+        <button id="cancel-review" class="button btn waves-effect waves-light">Cancel</button>
+   </div>
+
+{% endblock %}
