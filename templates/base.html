@@ -8,9 +8,45 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
     <title>What Film</title>
 </head>
+<body onload="renderMovieInfo()">
+    <header>
+        <nav class="navvy">
+            <div class="nav-bar nav-wrapper">
+                <a href="{{url_for('home')}}" class="brand-logo">What Film?</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="{{url_for('home')}}">Home</a></li>
+                    <li><a href="{{url_for('account')}}">Account</a></li>
+                    {% if session["username"] %}
+                        <li><a href="{{url_for('logout')}}">Logout</a></li>
+                    {% else %}
+                        <li><a href="{{url_for('login_button')}}">Login</a></li>
+                    {% endif %}
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a href="{{url_for('home')}}">Home</a></li>
+                    <li><a href="{{url_for('account')}}">Account</a></li>
+                    {% if session["username"] %}
+                        <li><a href="{{url_for('logout')}}">Logout</a></li>
+                    {% else %}
+                        <li><a href="{{url_for('login_button')}}">Login</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </header>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <!-- Do something with the message -->
+                <div><p>{{ message }}</p></div>
 
- 
-        {% block content %} {% endblock %}   
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <div class="container">
+        {% block content %} {% endblock %}
+    </div> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

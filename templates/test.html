@@ -6,12 +6,17 @@
         <div class="col s12 l6 center" id="img-container"></div>
         <div class="col s12 l6 center" id="plot-container"></div>
         <div class="col s12 l6 center" id="rating-container"></div>
+        {% if av_rating|length %}
+        <div class="col s12 l6 center" id="user-rating-container"><p>User rating: {{ av_rating }}</p></div>
+        {% else %}
+        <div class="col s12 l6 center"><p>User rating: None</p></div>
+        {% endif %}
     </div>
     <div class="row">
         <div class="col s12 center"><button class="button review-btn center btn waves-effect waves-light" id="review-button">Write a review</button></div>
         <div class="col s12 center"><h2>Reviews</h2></div>
         <div class="col s12 center" id="reviews">
-            <table class="responsive-table">
+            <table class="responsive-table review-table">
                 <thead>
                 <tr>
                     <th>Username</th>
@@ -21,12 +26,12 @@
                 </thead>
 
                 <tbody>
-                {% if reviews|length %}
-                    {% for reviews in review_list%}
+                {% if current_reviews|length %}
+                    {% for reviews in review_id%}
                     <tr>
-                        <td>{{ reviews.username }}</td>
-                        <td>{{ reviews.review }}</td>
-                        <td>{{ reviews.rating }}</td>
+                        <td>User:{{ reviews.username }}</td>
+                        <td>Review:{{ reviews.review }}</td>
+                        <td>rating:{{ reviews.rating }}</td>
                     </tr>
                     {% endfor %}
                 {% else %}

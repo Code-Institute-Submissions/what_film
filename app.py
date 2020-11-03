@@ -165,11 +165,26 @@ def register():
 
 @app.route('/movie/<id>')
 def movie_page(id):
-    reviews = mongo.db.reviews
-    review_id = reviews.find({"movie_id": id})
+    review_db = mongo.db.reviews
+    review_id = review_db.find({"movie_id": id})
+    print(f"These are the related reviews {review_id} to the idd of {id} ")
+    total = 0
+    print("FOR LOOP STARTS HERE")
     for reviews in review_id:
-        return render_template("test.html", id=id, review_list=review_id, reviews=reviews)
-    return render_template("test.html", id=id, review_list=review_id)   
+        ratings = reviews["rating"]
+        print(f"these are the reviews {reviews}")
+        print(f"the current rating in the iteration is: {ratings}")
+        total += int(ratings)
+        print(f"total is {total}")
+    print("***************    FOR LOOP OVER   *************")
+    average = total / review_id.count()
+    print(f"average is {average}")
+    # len(ratings)
+    av_rating = str(round(average, 2))
+    print(f"These are the related reviews {review_id} for the second time ")
+    current_reviews = reviews["review"]
+    print(f"these are the reviews second time: {current_reviews}")
+    return render_template("test.html", id=id, review_id=review_id, current_reviews=current_reviews, av_rating=av_rating)
 
 @app.route('/review', methods=['POST', 'GET'])
 def review():

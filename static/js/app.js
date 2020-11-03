@@ -2,7 +2,6 @@
 let INITIAL_SEARCH_VALUE = 'Top Rated Movies';
 let log = console.log;
 
-// Selecting elements from the DOM
 let searchButton = document.querySelector('#searchBtn');;
 let searchInput = document.querySelector('#search');
 let moviesContainer = document.querySelector('#movies-container');
