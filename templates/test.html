@@ -26,12 +26,12 @@
                 </thead>
 
                 <tbody>
-                {% if current_reviews|length %}
-                    {% for reviews in review_id%}
+                {% if reviews|length >= 1 %}
+                    {% for rev in review_by_id%}
                     <tr>
-                        <td>User:{{ reviews.username }}</td>
-                        <td>Review:{{ reviews.review }}</td>
-                        <td>rating:{{ reviews.rating }}</td>
+                        <td>{{ rev.username }}</td>
+                        <td>{{ rev.review }}</td>
+                        <td>{{ rev.rating }}</td>
                     </tr>
                     {% endfor %}
                 {% else %}
