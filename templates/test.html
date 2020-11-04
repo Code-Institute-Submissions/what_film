@@ -26,7 +26,7 @@
                 </thead>
 
                 <tbody>
-                {% if reviews|length >= 1 %}
+                {% if one_review|length >= 1 %}
                     {% for rev in review_by_id%}
                     <tr>
                         <td>{{ rev.username }}</td>

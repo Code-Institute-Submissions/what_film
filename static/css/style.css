@@ -24,7 +24,7 @@
 }
 
 .flash-container{
-    background-color: white;
+    background-color: #2D95EB;
 }
 
 .flashes {
@@ -35,11 +35,17 @@
 }
 
 .flash-content {
-    color: black;
+    color: #ffffff;
 }
 
 #close-flash {
-    color: black;
+    color: #ffffff;
+    background-color: #2D95EB;
+    border: none;
+}
+
+.x-flash {
+    font-size: 40px;
 }
 
 html {
@@ -68,9 +74,11 @@ body {
 section {
     position: relative;
     width: 100%;
+    margin-top: 25px;
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
+    overflow-x: auto;
     transition: 250ms all;
 }
 
@@ -94,8 +102,6 @@ section .imageContainer {
 
 
 .content-display {
-    display: block;
-    display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     align-items: center;
@@ -131,9 +137,8 @@ section .imageContainer {
 }
 
 .imageContainer {
-    border-radius: 4px;
-    box-shadow: 2px 2px 6px 0px white;
     cursor: pointer;
+    padding: 15px 0 15px
 }
 
 .imageContainer img {

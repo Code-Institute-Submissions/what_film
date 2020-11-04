@@ -170,14 +170,17 @@ def movie_page(id):
     total = 0
     for reviews in review_id:
         ratings = reviews["rating"]
+        one_review = reviews["review"]
         total += int(ratings)
     if total == 0:
         av_rating = "No Rating"
+        one_review = ""
     else:
         average = total / review_id.count()
         av_rating = str(round(average, 2))
+        one_review = one_review
     review_by_id = review_db.find({"movie_id": id})
-    return render_template("test.html", id=id, review_by_id=review_by_id, reviews=reviews, av_rating=av_rating)
+    return render_template("test.html", id=id, review_by_id=review_by_id, one_review=one_review, av_rating=av_rating)
 
 @app.route('/review', methods=['POST', 'GET'])
 def review():
