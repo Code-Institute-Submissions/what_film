@@ -82,7 +82,7 @@ function searchMovieRating() {
     axios.get(url)
         .then(function (response) {
             rating = response.data.vote_average;
-            filmRating = `<p id="film-rating">${rating}</p>`;
+            filmRating = `<p id="film-rating">TMDB rating: ${rating}</p>`;
             ratingContainer = document.getElementById("rating-container");
             ratingContainer.innerHTML = filmRating;   
     });  

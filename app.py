@@ -187,14 +187,17 @@ def review():
     reviews_db = mongo.db.reviews
     if 'username' in session:
         user = session['username']
-        reviews_db.insert({
-            "username": user,
-            "movie_id": request.form["id"],
-            "review": request.form["review"],
-            "rating": request.form["rating"]
-        })
-        flash("Your review has been posted!")
-        return redirect(url_for("home"))
+        if len(request.form["review"]) and len(request.form["rating"]) >= 1:
+            reviews_db.insert({
+                "username": user,
+                "movie_id": request.form["id"],
+                "review": request.form["review"],
+                "rating": request.form["rating"]
+            })
+            flash("Your review has been posted!")
+            return redirect(url_for("home"))
+        flash("Form error! Please write the review and select a rating")
+        return redirect(url_for('home'))
     flash("Please login to write a review")
     return render_template("login.html")
 
