@@ -155,6 +155,7 @@ def register():
             if existing_email is None:
                 users.insert({"username" : request.form["username"], "password" : hashpass, "email" : request.form["u_email"]})
                 session["email"] = request.form["u_email"]
+                flash("Welcome " + session["username"])
                 return redirect(url_for("home"))
             flash("That email already exists!")
             return render_template("register.html")
