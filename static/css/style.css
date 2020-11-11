@@ -289,6 +289,19 @@ section .imageContainer {
     padding: 50px 100px 10px;
 }
 
+.account-detail {
+    font-size: 25px;
+}
+
+.account-current-detail {
+    font-size: 25px;
+}
+
+.current-pass {
+    font-size: 25px;
+    color: #007bff;
+}
+
 /* Smaller screen sizes  */
 
 @media only screen and (max-width: 1024px) {
@@ -336,7 +349,16 @@ section .imageContainer {
     }
 
     .account-detail {
+        font-size: 25px;
+    }
+
+    .account-current-detail {
         font-size: 30px;
+    }
+
+    .current-pass {
+        font-size: 45px;
+        color: #007bff;
     }
 }
 

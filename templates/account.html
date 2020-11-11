@@ -1,65 +1,66 @@
 {% extends 'base.html' %} {% block content %}
-    <h1 class="strong topper center page-title">Account Details</h1>
-    <h3 class="center">Update your account details here</h3>
-    <div class="row account-form">
-        <form action="{{ url_for('update_account') }}" method="POST" class="col s12">
-        {% for user in account %}
-            <div class="row">
-                <div class="col s12 l6">
-                    <p id="username" class="account-detail">Username: {{ user.username }}</p>
-                </div> 
-                <div class="input-field col s12 l6">
-                    <input name="new_username" id="new_username" type="text" class="validate">
-                    <label for="new_username">New Username</label>
-                </div>  
-            </div>      
-            <div class="row">       
-                <div class="col s12 l6">
-                    <p id="email" class="account-detail">Email: {{ user.email }}</p>
-                    <input value="{{ user.email }}" name="old_email" type="email" class="hidden">
-                </div> 
-                <div class="input-field col s12">
-                    <input id="new_email" name="new_email" type="email" class="validate">
-                    <label for="new_email">New Email</label>
-                </div>    
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="new_password" name="new_password" type="password" class="validate">
-                    <label for="new_password">New Password</label>
-                </div> 
+<h1 class="strong topper center page-title">Account Details</h1>
+<h3 class="center">Update your account details here</h3>
+<div class="row account-form">
+    <form action="{{ url_for('update_account') }}" method="POST" class="col s12">
+    {% for user in account %}
+        <div class="row">
+            <div class="col s12 l6">
+                <p id="username" class="account-current-detail">Username: {{ user.username }}</p>
             </div> 
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="old_password" name="old_password" type="password" class="validate">
-                    <label for="old_password">Current Password</label>
-                </div> 
-            </div> 
-            <div class="row center">
-                <button class="button btn waves-effect waves-light account-btn" type="submit" name="submit">Submit</button>
+            <div class="input-field col s12 l6 account-detail">
+                <input name="new_username" id="new_username" type="text" class="validate">
+                <label for="new_username">New Username</label>
             </div>  
-        {% endfor %}                
-        </form> 
-        <div class="row center">
-            <button id="remove-button" class="button btn waves-effect waves-light account-btn" type="submit" name="submit">Remove Account</button>
+        </div>      
+        <div class="row">       
+            <div class="col s12 l6 account-detail">
+                <p id="email" class="account-current-detail">Email: {{ user.email }}</p>
+                <input value="{{ user.email }}" name="old_email" type="email" class="hidden">
+            </div> 
+            <div class="input-field col s12 l6 account-detail">
+                <input id="new_email" name="new_email" type="email" class="validate">
+                <label for="new_email">New Email</label>
+            </div>    
         </div>
+        <div class="row">
+            <div class="input-field col s12 account-detail">
+                <input id="new_password" name="new_password" type="password" class="validate">
+                <label for="new_password">New Password</label>
+            </div> 
+        </div> 
+        <div class="row">
+            <p class="current-pass center"><strong>Please enter your current password to update your details</strong></p>
+            <div class="input-field col s12 account-detail">
+                <input id="old_password" name="old_password" type="password" class="validate">
+                <label for="old_password">Current Password</label>
+            </div> 
+        </div> 
+        <div class="row center">
+            <button class="button btn waves-effect waves-light account-btn" type="submit" name="submit">Submit</button>
+        </div>  
+    {% endfor %}                
+    </form> 
+    <div class="row center">
+        <button id="remove-button" class="button btn waves-effect waves-light account-btn" type="submit" name="submit">Remove Account</button>
     </div>
-    <div id="remove-modal" class="form-container center">
-        <form method="POST" action="{{ url_for('delete_account') }}" class="col s12 center modal-content">
-            <div class="row">
-                <h3>Delete Account</h3>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input name="old_password" type="password" class="validate">
-                    <label for="old_password">Password</label>
-                </div> 
-            </div>
-            <div class="row">
-                <button class="button btn waves-effect waves-light" type="submit" name="submit">Delete Account</button>
-            </div>
-        </form>
-        <button id="cancel-remove" class="button btn waves-effect waves-light">Cancel</button>
-   </div>
+</div>
+<div id="remove-modal" class="form-container center">
+    <form method="POST" action="{{ url_for('delete_account') }}" class="col s12 center modal-content">
+        <div class="row">
+            <h3>Delete Account</h3>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input name="old_password" type="password" class="validate">
+                <label for="old_password">Password</label>
+            </div> 
+        </div>
+        <div class="row">
+            <button class="button btn waves-effect waves-light" type="submit" name="submit">Delete Account</button>
+        </div>
+    </form>
+    <button id="cancel-remove" class="button btn waves-effect waves-light">Cancel</button>
+</div>
 
 {% endblock %}
