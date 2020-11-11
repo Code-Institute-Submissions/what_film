@@ -44,13 +44,13 @@ body {
 
 #mobile-demo {
     background-color: #FA4F4F;
-    padding-top: 50px
+    padding-top: 100px
 }
 
 .side-nav li>a {
     color: #ffffff;
-    font-size: 30px;
-    padding: 40px;
+    font-size: 40px;
+    padding: 60px;
 } 
 
 #sidenav-overlay {
@@ -277,7 +277,23 @@ section .imageContainer {
     width: 50%;
 }*/
 
+/* Account-page */
+
+.account-btn {
+    width: 300px;
+    height: 50px;
+    font-size: 20px;
+}
+
+.account-form {
+    padding: 50px 100px 10px;
+}
+
+/* Smaller screen sizes  */
+
 @media only screen and (max-width: 1024px) {
+
+    /* Navbar  */
     
     .navvy {
         height: 150px;
@@ -293,6 +309,8 @@ section .imageContainer {
         padding-top: 50%;
     }
 
+    /* Home page  */
+
     .topper {
     padding-top: 150px;
     }  
@@ -302,12 +320,22 @@ section .imageContainer {
         width: 100px;
     }
 
-    .search-icon {
+    #search-icon {
         font-size: 50px;
     }
 
     #search {
         height: 100px;
+        font-size: 30px;
+    }
+
+    /* Account page  */
+
+    .page-title {
+        padding-top: 200px;
+    }
+
+    .account-detail {
         font-size: 30px;
     }
 }
