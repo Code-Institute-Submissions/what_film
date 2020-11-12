@@ -28,6 +28,7 @@ body {
     margin: 0;
     background-color: black;
     color: white;
+    font-family: 'Roboto', sans-serif;
 }
 
 .container {
@@ -242,7 +243,7 @@ section .imageContainer {
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: pink;
+  background-color: #ffffff;
   padding: 20px;
   border: none;
 }
@@ -264,6 +265,10 @@ section .imageContainer {
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    color: black;
 }
 
 #cancel-remove {
@@ -300,6 +305,10 @@ section .imageContainer {
 .current-pass {
     font-size: 25px;
     color: #007bff;
+}
+
+.page-title {
+    margin: 0;
 }
 
 /* Smaller screen sizes  */
@@ -349,7 +358,7 @@ section .imageContainer {
     }
 
     .account-detail {
-        font-size: 25px;
+        font-size: 40px;
     }
 
     .account-current-detail {
@@ -359,6 +368,46 @@ section .imageContainer {
     .current-pass {
         font-size: 45px;
         color: #007bff;
+    }
+
+    label[class="mob-labels"] {
+        font-size:30px;
+    }
+
+    /* Modals  */
+
+    .form-container {
+        padding: 10vh 20vw 0;
+    }
+
+    .modal-title {
+        font-size: 60px;
+    }
+
+    .modal-sub {
+        font-size: 50px;
+        color: #007bff;
+    }
+
+    .modal-btn {
+        font-size: 40px;
+        width: 500px;
+        height: 80px;
+    }
+
+    .modal-content {
+        padding: 50px;
+    }
+
+    .review-input {
+        font-size: 25px;
+    }
+}
+
+    /* Movie info page  */
+
+    #film-date {
+        font-size: 40px;
     }
 }
 

@@ -56,7 +56,7 @@ function searchMovieDate() {
     axios.get(url)
         .then(function (response) {
             date = response.data.release_date.slice(0, 4);
-            filmRelease = `<p id="film-date">${date}</p>`;
+            filmRelease = `<p id="film-date">(${date})</p>`;
             dateContainer = document.getElementById("release-container");
             dateContainer.innerHTML = filmRelease;   
     });  
