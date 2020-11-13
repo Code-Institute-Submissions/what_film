@@ -45,6 +45,14 @@ body {
     background-color: #711324;
 }
 
+.nav-icon {
+    font-size: 20px;
+}
+
+.brand-logo {
+    padding-left: 20px;
+}
+
 /* Mobile-nav-bar styling */
 
 #mobile-demo {
@@ -417,6 +425,15 @@ label[id="review-label"] {
     nav .button-collapse i {
         font-size: 80px;
         padding-top: 50%;
+    }
+
+    .nav-icon {
+        font-size: 35px;
+        padding-left: 40px; 
+    }
+
+    #nav-mobile {
+        padding-top: 30px;
     }
 
     /* Home page  */
