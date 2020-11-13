@@ -18,22 +18,22 @@
         <div class="col s12 center"><button class="button review-btn center btn waves-effect waves-light" id="review-button">Write a review</button></div>
         <div class="col s12 center"><h2>Reviews</h2></div>
         <div class="col s12 center" id="reviews">
-            <table class="responsive-table review-table">
+            <table class="review-table striped centered">
                 <thead>
-                <tr>
-                    <th>Username</th>
-                    <th>Review</th>
-                    <th>Rating</th>
-                </tr>
+                    <tr>
+                        <th class="th-user">Username</th>
+                        <th class="th-review">Review</th>
+                        <th class="th-rating">Rating</th>
+                    </tr>
                 </thead>
 
                 <tbody>
                 {% if one_review|length >= 1 %}
                     {% for rev in review_by_id%}
-                    <tr>
-                        <td>{{ rev.username }}</td>
-                        <td>{{ rev.review }}</td>
-                        <td>{{ rev.rating }}</td>
+                    <tr class="table-tr">
+                        <td class="td-user-rating capital">{{ rev.username }}</td>
+                        <td class="td-review">{{ rev.review }}</td>
+                        <td class="td-user-rating">{{ rev.rating }}</td>
                     </tr>
                     {% endfor %}
                 {% else %}

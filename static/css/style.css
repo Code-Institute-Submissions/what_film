@@ -7,6 +7,10 @@
     z-index: 1;
 }
 
+.capital {
+    text-transform: capitalize;
+}
+
 .topper {
     padding-top: 70px;
 }  
@@ -299,10 +303,6 @@ label[id="review-label"] {
     width: 100%;
 }
 
-/*.review-table {
-    width: 50%;
-}*/
-
 /* Account-page */
 
 .account-btn {
@@ -330,6 +330,28 @@ label[id="review-label"] {
 
 .page-title {
     margin: 0;
+}
+
+/* Review table */
+
+.review-table {
+    background-color: black;
+}
+
+.table-tr {
+    background-color: black!important;
+}
+
+.t-user {
+    width: 33%;
+}
+
+.t-review {
+    width: 33%;
+}
+
+.t-rating {
+    width: 33%;
 }
 
 /* Smaller screen sizes  */
@@ -398,7 +420,7 @@ label[id="review-label"] {
     /* Modals  */
 
     .form-container {
-        padding: 10vh 20vw 0;
+        padding: 10vh 10vw 0;
     }
 
     .modal-title {
@@ -429,7 +451,7 @@ label[id="review-label"] {
     }
 
     #rating {
-        font-size: 50px;
+        font-size: 40px;
     }
 
     #cancel-review {
@@ -442,7 +464,6 @@ label[id="review-label"] {
         height: 70px;
         font-size: 30px;
     }
-}
 
     /* Movie info page  */
 
@@ -464,6 +485,38 @@ label[id="review-label"] {
     }
 
     .rating {
+        font-size: 30px;
+    }
+
+    .review-btn {
+        font-size: 30px;
+        width: 300px;
+        height: 60px;
+    }
+
+    /* Review table */
+
+    .th-user {
+        width: 25%;
+    }
+
+    .th-review {
+        width: 50%;
+    }
+
+    .th-rating {
+        width: 25%;
+    }
+
+    .review-table thead {
+        font-size: 35px;
+    }
+
+    .td-review {
+        font-size: 20px;
+    }
+
+    .td-user-rating {
         font-size: 30px;
     }
 }
