@@ -6,7 +6,9 @@
         <div class="col s12 l6 center" id="img-container"></div>
         <div class="col s12 l6 center" id="plot-container"></div>
         <div class="col s12 l6 center">
-            <div id="rating-container"></div>
+            <div id="rating-container" class="center"></div>
+        </div>
+        <div class="col s12 l6 center">
             {% if av_rating|length %}
             <div class="col s12 l6 center" id="user-rating-container"><p class="rating">User rating: {{ av_rating }}</p></div>
             {% else %}
@@ -18,7 +20,7 @@
         <div class="col s12 center"><button class="button review-btn center btn waves-effect waves-light" id="review-button">Write a review</button></div>
         <div class="col s12 center"><h2>Reviews</h2></div>
         <div class="col s12 center" id="reviews">
-            <table class="review-table striped centered">
+            <table class="review-table centered">
                 <thead>
                     <tr>
                         <th class="th-user">Username</th>
@@ -38,7 +40,7 @@
                     {% endfor %}
                 {% else %}
                     <tr>
-                        <td><h3>No Reviews</h3></td>
+                        <h3>No Reviews</h3>
                     </tr>
                 {% endif %}
                 </tbody>
