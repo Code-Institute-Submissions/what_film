@@ -407,11 +407,17 @@ label[id="review-label"] {
     font-size: 30px;
 }
 
+/* login form */
+
+.login-form {
+    padding-top: 200px;
+}   
+
 /* Smaller screen sizes  */
 
 @media only screen and (max-width: 1024px) {
 
-    /* Navbar  */
+    /* Navbar small  */
     
     .navvy {
         height: 150px;
@@ -436,7 +442,7 @@ label[id="review-label"] {
         padding-top: 30px;
     }
 
-    /* Home page  */
+    /* Home page small  */
 
     .topper {
     padding-top: 150px;
@@ -456,7 +462,7 @@ label[id="review-label"] {
         font-size: 30px;
     }
 
-    /* Account page  */
+    /* Account page small  */
 
     .page-title {
         padding-top: 200px;
@@ -479,7 +485,7 @@ label[id="review-label"] {
         font-size:30px;
     }
 
-    /* Modals  */
+    /* Modals small  */
 
     .form-container {
         padding: 10vh 10vw 0;
@@ -527,7 +533,7 @@ label[id="review-label"] {
         font-size: 30px;
     }
 
-    /* Movie info page  */
+    /* Movie info page small  */
 
     #film-date {
         font-size: 40px;
@@ -556,7 +562,7 @@ label[id="review-label"] {
         height: 60px;
     }
 
-    /* Review table */
+    /* Review table small */
 
     .th-user {
         width: 10%;
@@ -580,6 +586,34 @@ label[id="review-label"] {
 
     .td-user-rating {
         font-size: 35px;
+    }
+
+    /* login form */
+
+    label[class="login-label"] {
+        font-size: 40px !important;
+    }
+
+    .login-input {
+        font-size: 50px;
+    }
+
+    .login-form {
+        padding: 400px 200px;
+    }
+
+    .login-btn {
+        width: 250px;
+        height: 70px;
+        font-size: 40px;
+    }
+
+    .log-btn-container {
+        padding-top: 100px;
+    }
+
+    .reg-btn {
+        font-size: 40px;
     }
 }
 
