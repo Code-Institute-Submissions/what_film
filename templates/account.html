@@ -2,6 +2,7 @@
 <h1 class="strong topper center page-title">Account Details</h1>
 <h3 class="center">Update your account details here</h3>
 <div class="row account-form">
+<!-- View and edit account details form -->
     <form action="{{ url_for('update_account') }}" method="POST" class="col s12">
     {% for user in account %}
         <div class="row">
@@ -36,15 +37,18 @@
                 <label class="mob-labels" for="old_password">Current Password</label>
             </div> 
         </div> 
+        <!-- Submit account changes form -->
         <div class="row center">
             <button class="button btn waves-effect waves-light account-btn" type="submit" name="submit">Submit</button>
         </div>  
     {% endfor %}                
     </form> 
+    <!-- Button to show modal -->
     <div class="row center">
         <button id="remove-button" class="button btn waves-effect waves-light account-btn" type="submit" name="submit">Remove Account</button>
     </div>
 </div>
+<!-- Modal pop up to delete account -->
 <div id="remove-modal" class="form-container center">
     <form method="POST" action="{{ url_for('delete_account') }}" class="col s12 center modal-content">
         <div class="row modal-content">

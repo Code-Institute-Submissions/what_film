@@ -1,11 +1,12 @@
 {% extends 'base.html' %} {% block content %}
+<!-- Search movie input -->
 <div class="flex topper">
             <button id="searchBtn" class="btn" type="submit" name="search_submit">
                 <i id="search-icon" class="material-icons">search</i>
             </button>
-                <!--  -->
             <input id="search" class="search_box" type="text" placeholder="Search film title...">
         </div>
+<!-- Search movie result -->
 <div class="container searched-movies">
         <div id="movies-searchable"></div>
         <div id="movies-container"></div>

@@ -14,12 +14,14 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/home')
 def home():   
+    #checks if username is in session and renders the home page
     if 'username' in session:
         user = 'username' 
     return render_template("index.html")
 
 @app.route('/login_button')
 def login_button():  
+    #Login button takes you to login.html
     return render_template("login.html")  
 
 @app.route('/login', methods=['POST', 'GET'])
@@ -27,10 +29,12 @@ def login():
     users = mongo.db.users
     logged_user = users.find_one({"username": request.form["username"]})
     if logged_user:
+        #checks if username matches one in database
         if bcrypt.hashpw(request.form['password'].encode('utf-8'), logged_user['password']) == logged_user['password']:
             session["username"] = request.form["username"]
             flash("Welcome back " + session["username"])
             return redirect(url_for("home"))
+    # if username is'nt recognised        
     flash("Invalid Username/Password")
     return redirect(url_for("login_button"))
 

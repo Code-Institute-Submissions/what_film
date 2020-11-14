@@ -1,4 +1,4 @@
-// Initial Values
+// Initial Variables
 let INITIAL_SEARCH_VALUE = 'Top Rated Movies';
 let log = console.log;
 
@@ -7,6 +7,7 @@ let searchInput = document.querySelector('#search');
 let moviesContainer = document.querySelector('#movies-container');
 let moviesSearchable = document.querySelector('#movies-searchable');
 
+// Anchor element for movie posters to take the user to an info page for that movie via the movie id
 function createImageContainer(imageUrl, id) {
     let tempDiv = document.createElement('div');
     tempDiv.setAttribute('class', 'imageContainer');
@@ -20,54 +21,18 @@ function createImageContainer(imageUrl, id) {
     return tempDiv;
 }
 
+// Reset search input after search
 function resetInput() {
     searchInput.value = '';
 }
 
+// Error message 
 function handleGeneralError(error) {
     log('Error: ', error.message);
     alert(error.message || 'Internal Server');
 }
 
-/*function createVscreen(video) {
-    let videoKey = (video && video.key) || 'No key found!!!';
-    let vScreen = document.createElement('vScreen');
-    vScreen.src = `http://www.youtube.com/embed/${videoKey}`;
-    vScreen.width = 360;
-    vScreen.height = 315;
-    vScreen.allowFullscreen = true;
-    return vScreen;
-}
-
-function insertVscreenIntoContent(video, content) {
-    let videoContent = document.createElement('div');
-    let vScreen = createVscreen(video);
-
-    videoContent.appendChild(vScreen);
-    content.appendChild(videoContent);
-}
-
-
-function createVideoTemplate(data) {
-    let content = this.content;
-    content.innerHTML = '<p id="content-close">X</p>';
-    
-    let videos = data.results || [];
-
-    if (videos.length === 0) {
-        content.innerHTML = `
-            <p id="content-close">X</p>
-            <p>No Trailer found for this film title of ${data.id}</p>
-        `;
-        return;
-    }
-
-    for (let i = 0; i < 4; i++) {
-        let video = videos[i];
-        insertVscreenIntoContent(video, content);
-    }
-}*/
-
+// Retrieve categorie title
 function createSectionHeader(title) {
     let header = document.createElement('h2');
     header.innerHTML = title;
@@ -75,7 +40,7 @@ function createSectionHeader(title) {
     return header;
 }
 
-
+// Display posters and category title
 function renderMovies(data) {
     let moviesBlock = generateMoviesBlock(data);
     let header = createSectionHeader(this.title);
@@ -84,7 +49,7 @@ function renderMovies(data) {
 }
 
 
-
+// Search movies and display in movie block
 function renderSearchMovies(data) {
     if ((window.location.pathname == '/' || window.location.pathname == '/home')) {
         moviesSearchable.innerHTML = '';
@@ -93,6 +58,7 @@ function renderSearchMovies(data) {
     }    
 }
 
+// Retrieving and displaying movie posters
 function generateMoviesBlock(data) {
     let movies = data.results;
     let section = document.createElement('section');
@@ -145,34 +111,8 @@ $(document).ready(function() {
             }
       }
     })      
-/*let imgAnchor = document.getElementsByClassName("img-a");
-imgAnchor.onclick = function activateMovieInfo() {
-    debugger;
-    renderMovieInfo();
-}*/
 
-/*testPage = document.getElementById("test-page");
-testPage.onload = function onLoad() {
-    debugger;
-    renderMovieInfo(data)
-};*/
-
-/*function renderMovieInfo() {
-    debugger;
-    filmPoster = `
-        <img class="filmPoster" src="${imageUrl}" alt="" data-movie-id="${id}">
-    `;
-    filmTitle = `<h2 id="film-title">${title}</h2>`;
-    plot = `<div class="plot-container"><p class="plot">${overview}</p></p></div>`;
-    titleContainer = document.getElementById("title-container");
-    imgContainer = document.getElementById("img-container");
-    plotContainer = document.getElementById("plot-container");
-    hello = document.getElementById("hello");
-    titleContainer.innerHTML = filmTitle;
-    hello.innerHTML = "<p>Hello</p>";
-}*/
-
-//Get movie info page rendered
+//Get movie info page rendered, functions from api.js
 function renderMovieInfo() {
     searchMovieTitle();
     searchMovieDate();
@@ -192,6 +132,7 @@ $(document).ready(function() {
     }
 })    
 
+// Review modal elements
 let reviewBtn = document.getElementById("review-button");
 let modal = document.getElementById("review-modal");
 let cancelBtn = document.getElementById("cancel-review");
@@ -219,6 +160,7 @@ $(cancelRemove).click(function(){
         $(accountModal).css("display", "none");
     });
 
+// Flash message variables
 let closeFlash = document.getElementById("close-flash");
 let flashPop = document.getElementById("flash-pop");
 // When the user clicks on <span> (x), close the flash
