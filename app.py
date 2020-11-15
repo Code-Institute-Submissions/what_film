@@ -11,6 +11,10 @@ app.config["MONGO_URI"] = 'mongodb+srv://lewejuice:Leahlh1994@myfirstcluster.ztx
 
 mongo = PyMongo(app)
 
+@app.route('/')
+def open():
+    return home()
+
 @app.route('/home')
 def home():   
     #checks if username is in session and renders the home page
