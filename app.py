@@ -189,12 +189,12 @@ def movie_page(id):
     #takes the id from url which is given from Javascript
     review_id = review_db.find({"movie_id": id})
     total = 0
-    #if there is a review stored in the database matching the same movie id, get all ratings and reviews 
+    #if there is a review stored in the database matching the same movie id, get all ratings and reviews
     for reviews in review_id:
         ratings = reviews["rating"]
         one_review = reviews["review"]
         total += int(ratings)
-    #if there are none matching that movie id, it will show no rating and no review    
+    #if there are none matching that movie id, it will show no rating and no review
     if total == 0:
         av_rating = "No Rating"
         one_review = ""
@@ -203,7 +203,7 @@ def movie_page(id):
         average = total / review_id.count()
         av_rating = str(round(average, 2))
         one_review = one_review
-    #passes the variable to jinja function in html to for loop the reviews    
+    #passes the variable to jinja function in html to for loop the reviews
     review_by_id = review_db.find({"movie_id": id})
     return render_template("test.html", id=id, review_by_id=review_by_id, one_review=one_review, av_rating=av_rating)
 
