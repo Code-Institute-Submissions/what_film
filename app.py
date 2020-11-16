@@ -224,7 +224,7 @@ def review():
             #tells the user their review has been posted
             flash("Your review has been posted!")
             return redirect(url_for("home"))
-        #No text found in review so user is notified    
+        #No text found in review so user is notified
         flash("Form error! Please write the review and select a rating")
         return redirect(url_for('home'))
     #user is taken to login screen if not logged in    
