@@ -24,6 +24,8 @@
         <div class="col s12 center"><button class="button review-btn center btn waves-effect waves-light" id="review-button">Write a review</button></div>
         <div class="col s12 center"><h2>Reviews</h2></div>
         <div class="col s12 center" id="reviews">
+        <!-- Jinja functiin to display the reviews -->
+        {% if one_review|length >= 1 %}
             <table class="review-table centered">
                 <thead>
                     <tr>
@@ -32,10 +34,7 @@
                         <th class="th-rating">Rating</th>
                     </tr>
                 </thead>
-
                 <tbody>
-                <!-- Jinja functiin to display the reviews -->
-                {% if one_review|length >= 1 %}
                     {% for rev in review_by_id%}
                     <tr class="table-tr">
                         <td class="td-user-rating capital">{{ rev.username }}</td>
@@ -43,13 +42,11 @@
                         <td class="td-user-rating">{{ rev.rating }}</td>
                     </tr>
                     {% endfor %}
-                {% else %}
-                    <tr>
-                        <h3>No Reviews</h3>
-                    </tr>
-                {% endif %}
                 </tbody>
             </table>
+        {% else %}
+            <h3>No Reviews</h3>
+        {% endif %}
         </div>
     </div>
     <!-- Modal to write review and rate the movie out of 10 -->
