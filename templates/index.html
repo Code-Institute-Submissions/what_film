@@ -11,4 +11,12 @@
         <div id="movies-searchable"></div>
         <div id="movies-container"></div>
 </div>
+<script>
+    let searcher = document.getElementById("search")
+    searcher.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            searchBar();
+        }  
+    });
+</script>
 {% endblock %}

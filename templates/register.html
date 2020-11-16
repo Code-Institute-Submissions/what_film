@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 <!-- Register form -->
 <div class="row topper form-container login-form">
-    <form method="POST" action="{{ url_for('register') }}" class="col s12" onsubmit="validateRegister()">
+    <form method="POST" name="regForm" action="{{ url_for('register') }}" class="col s12" onsubmit="validateRegister()">
       <div class="row">
         <div class="input-field col s12 login-input">
           <input name="username" id="username" type="text" class="validate login-input">

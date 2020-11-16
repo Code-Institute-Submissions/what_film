@@ -109,12 +109,6 @@ function searchBar() {
 $(searchButton).click(function(){
     searchBar();
 });    
-    
-searchInput.addEventListener("keyup", function(event) {
-    if (event.keyCode === 13) {
-        searchBar();
-    }
-}); 
 
 //Get movie info page rendered, functions from api.js
 function renderMovieInfo() {
@@ -185,11 +179,15 @@ function validateReview() {
 }
 
 function validateRegister() {
-    let x = document.forms["reviewForm"]["review"].value;
-    let y = x.split(' ').join('');
-    if (y===null || y==="") {
+    let user = document.forms["regForm"]["username"].value;
+    let email = document.forms["regForm"]["u_email"].value;
+    let pass = document.forms["regForm"]["password"].value;
+    let y = user.split(' ').join('');
+    let X = email.split(' ').join('');
+    let w = pass.split(' ').join('');
+    if (y===null || y==="" && x===null || x==="" && w===null || w==="") {
         event.preventDefault();
-        alert("Review must be filled");
+        alert("Error, please fill in all fields");
         return false;
     } 
 }
