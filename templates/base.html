@@ -48,10 +48,10 @@
     {% with messages = get_flashed_messages() %}
         {% if messages %}
             {% for message in messages %}
-                <div id="flash-pop" class="flashes flash-container center">
-                    <h3 class="flash-content">{{ message }}</h3>
-                    <button id="close-flash"><i class="material-icons x-flash">close</i></button>
-                </div>
+            <div id="flash-pop" class="flashes flash-container center">
+                <h3 class="flash-content">{{ message }}</h3>
+                <button id="close-flash"><i class="material-icons x-flash">close</i></button>
+            </div>
             {% endfor %}
         {% endif %}
     {% endwith %}
@@ -59,6 +59,7 @@
     {% block content %} 
     {% endblock %}
     </div>
+    <footer class="footer"><p class="cp-text center">© Copyright 2020  |  What film  |  Lewis Hamilton  |  All rights reserved.</p></footer>
     <!-- Script tags -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>

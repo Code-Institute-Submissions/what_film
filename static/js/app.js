@@ -49,7 +49,7 @@ function renderMovies(data) {
 }
 
 
-// Search movies and display in movie block
+// Render and display the searched movie block
 function renderSearchMovies(data) {
     if ((window.location.pathname == '/' || window.location.pathname == '/home')) {
         moviesSearchable.innerHTML = '';
@@ -98,19 +98,23 @@ function createMovieContainer(section) {
 }
 
 // Search button function
-$(document).ready(function() {
-      if ((window.location.pathname == '/' || window.location.pathname == '/home')) {
-            searchButton.onclick = function (event) {
-                event.preventDefault();
-                let value = searchInput.value
+function searchBar() {
+    let value = searchInput.value
+    if (value) {
+        searchMovie(value);
+        resetInput();
+    }
+}
 
-            if (value) {
-                searchMovie(value);
-            }
-                resetInput();
-            }
-      }
-    })      
+$(searchButton).click(function(){
+    searchBar();
+});    
+    
+searchInput.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        searchBar();
+    }
+}); 
 
 //Get movie info page rendered, functions from api.js
 function renderMovieInfo() {
@@ -138,13 +142,13 @@ let modal = document.getElementById("review-modal");
 let cancelBtn = document.getElementById("cancel-review");
 // When the user clicks on the button, open the modal
 $(reviewBtn).click(function(){
-        $(modal).css("display", "block");
-    });
+    $(modal).css("display", "block");
+});
 
 // When the user clicks on <span> (x), close the modal
 $(cancelBtn).click(function(){
-        $(modal).css("display", "none");
-    });
+    $(modal).css("display", "none");
+});
 
 // Open mondal to remove account
 let removeAccountBtn = document.getElementById("remove-button");
@@ -152,18 +156,40 @@ let accountModal = document.getElementById("remove-modal");
 let cancelRemove = document.getElementById("cancel-remove");
 // When the user clicks on the button, open the modal
 $(removeAccountBtn).click(function(){
-        $(accountModal).css("display", "block");
-    });
+    $(accountModal).css("display", "block");
+});
 
 // When the user clicks on <span> (x), close the modal
 $(cancelRemove).click(function(){
-        $(accountModal).css("display", "none");
-    });
+    $(accountModal).css("display", "none");
+});
 
 // Flash message variables
 let closeFlash = document.getElementById("close-flash");
 let flashPop = document.getElementById("flash-pop");
 // When the user clicks on <span> (x), close the flash
 $(closeFlash).click(function(){
-        $(flashPop).css("display", "none");
-    });
+    $(flashPop).css("display", "none");
+});
+
+// Form validations
+
+function validateReview() {
+    let x = document.forms["reviewForm"]["review"].value;
+    let y = x.split(' ').join('');
+    if (y===null || y==="") {
+        event.preventDefault();
+        alert("Review must be filled");
+        return false;
+    } 
+}
+
+function validateRegister() {
+    let x = document.forms["reviewForm"]["review"].value;
+    let y = x.split(' ').join('');
+    if (y===null || y==="") {
+        event.preventDefault();
+        alert("Review must be filled");
+        return false;
+    } 
+}

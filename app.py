@@ -6,7 +6,7 @@ from flask import Flask, render_template, flash, redirect, session, url_for, req
 
 app = Flask(__name__)
 app.secret_key = config('SECRET_KEY')
-app.config["MONGO_DBNAME"] = 'whatFilmDB'
+app.config["MONGO_DBNAME"] = config('MONGO_DB_NAME')
 app.config["MONGO_URI"] = config('MONGO_URI')
 
 mongo = PyMongo(app)
@@ -201,7 +201,7 @@ def movie_page(id):
     #if there is one or more found it averages the ratings and rounds it to one decimal place
     else:
         average = total / review_id.count()
-        av_rating = str(round(average, 2))
+        av_rating = str(round(average, 1))
         one_review = one_review
     #passes the variable to jinja function in html to for loop the reviews
     review_by_id = review_db.find({"movie_id": id})

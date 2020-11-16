@@ -155,7 +155,6 @@ section .imageContainer {
     position: absolute;
     top: 20px;
     padding: 10px;
-    /* width: 35px;; */
     border: 1px solid lightgrey;
     border-radius: 45%;
     left: 20px;
@@ -214,22 +213,6 @@ section .imageContainer {
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: .25rem;
-}
-
-#id-container {
-    display: none;
-}
-
-#film-img {
-    height: 60vh;
-}
-
-#film-date {
-    margin-top: 0;
-}
-
-#film-title {
-    margin-bottom: 0; 
 }
 
 /* Modal Content/Box */
@@ -307,6 +290,10 @@ label[id="review-label"] {
     font-size: 50px;
 }
 
+.modal-btn {
+    width: 250px;
+}
+
 #cancel-remove {
     background-color: red;
     color: #ffffff;
@@ -347,6 +334,11 @@ label[id="review-label"] {
 
 #film-date {
     font-size: 30px;
+    margin-top: 0;
+}
+
+#plot-title {
+    padding-top: 40px;
 }
 
 #film-plot {
@@ -354,8 +346,12 @@ label[id="review-label"] {
     padding: 0 20px 0 0;
 }
 
+#id-container {
+    display: none;
+}
+
 #film-img {
-    height: 60vh;
+    height: 80vh;
 }
 
 #film-title {
@@ -415,6 +411,18 @@ label[id="review-label"] {
 .login-form {
     padding-top: 200px;
 }   
+
+/* copy right footer */
+
+.footer {
+    background-color: #1f1f1f;
+    margin-top: 150px;
+}
+
+.cp-text {
+    padding: 30px 0;
+    color: #A9A9A9;
+}
 
 /* Smaller screen sizes  */
 
@@ -591,7 +599,7 @@ label[id="review-label"] {
         font-size: 35px;
     }
 
-    /* login form */
+    /* small login form */
 
     label[class="login-label"] {
         font-size: 40px !important;
@@ -618,7 +626,26 @@ label[id="review-label"] {
     .reg-btn {
         font-size: 40px;
     }
+
+    /* small copy right footer */
+
+    .cp-text {
+        padding: 50px 0;
+        color: #A9A9A9;
+        font-size: 30px;
+    }
 }
 
+@media only screen and (max-width: 1024px) and (min-width: 1020px) {
+    #img-container {
+        width: 100%;
+    }
 
+    #plot-container {
+        width: 100%;
+    }
 
+    #plot-title {
+        width: 100%;
+    }
+}
