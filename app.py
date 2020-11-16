@@ -1,13 +1,13 @@
 import os
-from flask import Flask, render_template, flash, redirect, request, session, url_for, request
-from flask_pymongo import PyMongo
-from bson.objectid import ObjectId
 import bcrypt
+from decouple import config
+from flask_pymongo import PyMongo
+from flask import Flask, render_template, flash, redirect, session, url_for, request
 
 app = Flask(__name__)
-app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
+app.secret_key = config('SECRET_KEY')
 app.config["MONGO_DBNAME"] = 'whatFilmDB'
-app.config["MONGO_URI"] = 'mongodb+srv://lewejuice:Leahlh1994@myfirstcluster.ztxrz.mongodb.net/whatFilmDB?retryWrites=true&w=majority'
+app.config["MONGO_URI"] = config('MONGO_URI')
 
 mongo = PyMongo(app)
 
@@ -235,5 +235,5 @@ def review():
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
-            port=int(os.environ.get('PORT')),
-            debug=True)
+    port=int(os.environ.get('PORT')),
+    debug=config('DEBUG', cast=bool))

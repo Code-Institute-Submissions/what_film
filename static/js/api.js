@@ -1,5 +1,5 @@
 // Initial Variables for TMDB API
-let MOVIE_DB_API = '7086f3df7f1d4285192dbd81ceafdd50';
+const MOVIE_DB_API = '7086f3df7f1d4285192dbd81ceafdd50';
 let MOVIE_DB_ENDPOINT = 'https://api.themoviedb.org';
 let MOVIE_DB_IMAGE_ENDPOINT = 'https://image.tmdb.org/t/p/w500';
 let DEFAULT_POST_IMAGE = 'https://via.placeholder.com/150';
