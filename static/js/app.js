@@ -14,7 +14,7 @@ function createImageContainer(imageUrl, id) {
     tempDiv.setAttribute('data-id', id);
 
     let movieElement = `
-        <a href="https://what-film.herokuapp.com/movie/${id}" class="img-a"><img src="${imageUrl}" alt="" data-movie-id="${id}">
+        <a href="/movie/${id}" class="img-a"><img src="${imageUrl}" alt="" data-movie-id="${id}">
     `;
     tempDiv.innerHTML = movieElement;
 
