@@ -4,19 +4,19 @@
     <form method="POST" name="regForm" action="{{ url_for('register') }}" class="col s12" onsubmit="validateRegister()">
       <div class="row">
         <div class="input-field col s12 login-input">
-          <input name="username" id="username" type="text" class="validate login-input">
+          <input name="username" id="username" type="text" class="validate login-input" required pattern="[0-9a-zA-Z_.-]*">
           <label class="login-label" for="username">Username</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12 login-input">
-          <input id="password" name="password" type="password" class="validate">
+          <input id="password" name="password" type="password" class="validate" required pattern="[0-9a-zA-Z_.-]*">
           <label class="login-label" for="password">Password</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12 login-input">
-          <input id="email" name="u_email" type="email" class="validate">
+          <input id="email" name="u_email" type="email" class="validate" required pattern="[0-9a-zA-Z_.-@]*">
           <label class="login-label" for="email">Email</label>
         </div>
       </div>

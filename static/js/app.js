@@ -177,17 +177,3 @@ function validateReview() {
         return false;
     } 
 }
-
-function validateRegister() {
-    let user = document.forms["regForm"]["username"].value;
-    let email = document.forms["regForm"]["u_email"].value;
-    let pass = document.forms["regForm"]["password"].value;
-    let y = user.split(' ').join('');
-    let X = email.split(' ').join('');
-    let w = pass.split(' ').join('');
-    if (y===null || y==="" && x===null || x==="" && w===null || w==="") {
-        event.preventDefault();
-        alert("Error, please fill in all fields");
-        return false;
-    } 
-}
