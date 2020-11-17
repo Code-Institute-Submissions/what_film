@@ -12,6 +12,7 @@ app.config["MONGO_URI"] = config('MONGO_URI')
 mongo = PyMongo(app)
 
 @app.route('/')
+# Takes user to the home-page
 @app.route('/home')
 def home():   
     # checks if username is in session and renders the home page
@@ -19,11 +20,13 @@ def home():
         user = 'username' 
     return render_template("index.html")
 
+# Takes user to login screen when login button is pressed
 @app.route('/login_button')
 def login_button():  
     # Login button takes you to login.html
     return render_template("login.html")  
 
+# Logs user in if credentials are recognised
 @app.route('/login', methods=['POST', 'GET'])
 def login():
     users = mongo.db.users
@@ -38,6 +41,7 @@ def login():
     flash("Invalid Username/Password")
     return redirect(url_for("login_button"))
 
+# logs user out
 @app.route('/logout')
 def logout():
     # clears cookies to logout user
@@ -45,6 +49,7 @@ def logout():
     flash("You are logged out")
     return redirect(url_for("home"))
 
+# displays users account information
 @app.route('/account', methods=['POST', 'GET'])
 def account():   
     if 'username' in session:
@@ -54,6 +59,7 @@ def account():
         return render_template("account.html", account=active_user)
     return render_template("login.html")
 
+# delete users account and reviews they have made
 @app.route('/delete_account', methods=['POST', 'GET'])
 def delete_account():
     users = mongo.db.users
@@ -71,7 +77,7 @@ def delete_account():
     flash("Incorrect Password")
     return redirect(url_for("account"))
 
-
+# updates users account details on request
 @app.route('/update_account', methods=['POST', 'GET'])
 def update_account():
     users = mongo.db.users
@@ -158,6 +164,7 @@ def update_account():
     flash("Incorrect Password")
     return redirect(url_for("account"))
 
+# registration form for new users to create an account
 @app.route('/register', methods=['POST', 'GET'])
 def register():
     if request.method == 'POST':
@@ -180,9 +187,9 @@ def register():
         # if username is already in use, flashes message "That username already exists!"
         flash("That username already exists!")
         return render_template("register.html")
-
     return render_template("register.html")
 
+# opens an information page on the movie selected
 @app.route('/movie/<id>')
 def movie_page(id):
     review_db = mongo.db.reviews
@@ -207,6 +214,7 @@ def movie_page(id):
     review_by_id = review_db.find({"movie_id": id})
     return render_template("test.html", id=id, review_by_id=review_by_id, one_review=one_review, av_rating=av_rating)
 
+# Users can leave a review and rating of any movies they choose
 @app.route('/review', methods=['POST', 'GET'])
 def review():
     reviews_db = mongo.db.reviews
@@ -223,15 +231,13 @@ def review():
             })
             # tells the user their review has been posted
             flash("Your review has been posted!")
-            return redirect(url_for("home"))
+            return redirect(request.referrer)
         # No text found in review so user is notified
         flash("Form error! Please write the review and select a rating")
         return redirect(url_for('home'))
     # user is taken to login screen if not logged in
     flash("Please login to write a review")
     return render_template("login.html")
-
-
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

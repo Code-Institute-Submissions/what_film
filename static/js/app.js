@@ -175,5 +175,5 @@ function validateReview() {
         event.preventDefault();
         alert("Review must be filled");
         return false;
-    } 
+    }
 }

@@ -52,8 +52,10 @@ body {
     font-size: 20px;
 }
 
-.brand-logo {
+#logo {
     padding-left: 20px;
+    font-weight: bold;
+    font-size: 50px;
 }
 
 /* Mobile-nav-bar styling */
@@ -453,6 +455,12 @@ label[id="review-label"] {
         padding-top: 30px;
     }
 
+    #logo {
+        padding-left: 0;
+        font-weight: bold;
+        font-size: 80px;
+    }
+
     /* Home page small  */
 
     .topper {
@@ -636,6 +644,8 @@ label[id="review-label"] {
     }
 }
 
+/* screen size for ipad pro */
+
 @media only screen and (max-width: 1024px) and (min-width: 1020px) {
     #img-container {
         width: 100%;
@@ -647,5 +657,9 @@ label[id="review-label"] {
 
     #plot-title {
         width: 100%;
+    }
+
+    #logo {
+        padding-left: 20px;
     }
 }
