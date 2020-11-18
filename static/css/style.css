@@ -294,6 +294,16 @@ label[id="review-label"] {
 	width: 250px;
 }
 
+.no-login-review {
+    background-color: #ffffff;
+    height: 50%;
+}
+
+.please-login {
+    font-size: 40px;
+    font-weight: bold;
+}
+
 #cancel-remove {
 	background-color: red;
 	color: #ffffff;
@@ -526,6 +536,10 @@ label[id="review-label"] {
 		height: 70px;
 		font-size: 30px;
 	}
+    .please-login {
+        font-size: 80px;
+        padding-top: 100px;
+    }
 	/* Movie info page small  */
 	#film-date {
 		font-size: 40px;

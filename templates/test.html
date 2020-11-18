@@ -6,7 +6,7 @@
     <!-- Displays movie infomation from the API -->
     <div class="row">
         <div class="col s12 l6 center" id="img-container"></div>
-        <div class="col s12 l6 center" id="plot-title"><h4>Synapsis:</h4></div>
+        <div class="col s12 l6 center" id="plot-title"><h4>Synopsis:</h4></div>
         <div class="col s12 l6 center" id="plot-container"></div>
         <div class="col s12 l6 center">
             <div id="rating-container" class="center"></div>
@@ -52,6 +52,8 @@
     </div>
     <!-- Modal to write review and rate the movie out of 10 -->
     <div id="review-modal" class="form-container center">
+        <!-- Jinja function to tell user they need to login to write a review -->
+        {% if session["username"] %}
         <form method="POST" action="{{ url_for('review') }}" class="col s12 center modal-content" onsubmit="validateReview()" name="reviewForm">
             <div class="row">
                 <h3 class="review-modal-title">Write review</h3>
@@ -73,6 +75,12 @@
                 <button class="button btn waves-effect waves-light review-submit-btn" type="submit" name="submit">Submit</button>
             </div>
         </form>
+        {% else %}
+        <div class="no-login-review">
+            <p class="col s12 center modal-content please-login">Please login to review a movie</p>
+            <a href="{{url_for('login_button')}}"><button class="button btn waves-effect waves-light review-submit-btn">Login</button></a>
+        </div>
+        {% endif %}    
         <!-- Cancel review and close modal -->
         <button id="cancel-review" class="button btn waves-effect waves-light">Cancel</button>
    </div>
