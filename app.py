@@ -221,7 +221,8 @@ def review():
     # checks if user is logged in
     if 'username' in session:
         user = session['username']
-        # checks if the review is there and then inserts the review, rating, username and movie id to the database
+        # checks if the review is there and then inserts the review,
+        # rating, username and movie id to the database
         if len(request.form["review"]) and len(request.form["rating"]) >= 1:
             reviews_db.insert({
                 "username": user,

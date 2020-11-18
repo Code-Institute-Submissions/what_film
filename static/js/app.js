@@ -2,7 +2,7 @@
 let INITIAL_SEARCH_VALUE = 'Top Rated Movies';
 let log = console.log;
 
-let searchButton = document.querySelector('#searchBtn');;
+let searchButton = document.querySelector('#searchBtn');
 let searchInput = document.querySelector('#search');
 let moviesContainer = document.querySelector('#movies-container');
 let moviesSearchable = document.querySelector('#movies-searchable');
@@ -99,7 +99,7 @@ function createMovieContainer(section) {
 
 // Search button function
 function searchBar() {
-    let value = searchInput.value
+    let value = searchInput.value;
     if (value) {
         searchMovie(value);
         resetInput();
@@ -128,7 +128,7 @@ $(document).ready(function() {
             searchPopularMovie();
             getTrendingMovies();
     }
-})    
+});    
 
 // Review modal elements
 let reviewBtn = document.getElementById("review-button");
@@ -169,7 +169,7 @@ $(closeFlash).click(function(){
 // Form validations
 
 function validateReview() {
-    let x = document.forms["reviewForm"]["review"].value;
+    let x = document.forms['reviewForm']['review'].value;
     let y = x.split(' ').join('');
     if (y===null || y==="") {
         event.preventDefault();

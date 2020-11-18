@@ -10,7 +10,7 @@
                 <p id="username" class="account-current-detail capital">Username: {{ user.username }}</p>
             </div> 
             <div class="input-field col s12 l6 account-detail">
-                <input name="new_username" id="new_username" type="text" class="validate">
+                <input name="new_username" id="new_username" type="text" class="validate" pattern="[0-9a-zA-Z_.-]*">
                 <label class="mob-labels" for="new_username">New Username</label>
             </div>  
         </div>      
@@ -20,13 +20,13 @@
                 <input value="{{ user.email }}" name="old_email" type="email" class="hidden">
             </div> 
             <div class="input-field col s12 l6 account-detail">
-                <input id="new_email" name="new_email" type="email" class="validate">
+                <input id="new_email" name="new_email" type="email" class="validate" pattern="[0-9a-zA-Z_.-@]*">
                 <label class="mob-labels" for="new_email">New Email</label>
             </div>    
         </div>
         <div class="row">
             <div class="input-field col s12 account-detail">
-                <input id="new_password" name="new_password" type="password" class="validate">
+                <input id="new_password" name="new_password" type="password" class="validate" pattern="[0-9a-zA-Z_.-]*">
                 <label class="mob-labels" for="new_password">New Password</label>
             </div> 
         </div> 

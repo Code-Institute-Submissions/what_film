@@ -1,5 +1,5 @@
 // Initial Variables for TMDB API
-const MOVIE_DB_API = '7086f3df7f1d4285192dbd81ceafdd50';
+let MOVIE_DB_API = '7086f3df7f1d4285192dbd81ceafdd50';
 let MOVIE_DB_ENDPOINT = 'https://api.themoviedb.org';
 let MOVIE_DB_IMAGE_ENDPOINT = 'https://image.tmdb.org/t/p/w500';
 let DEFAULT_POST_IMAGE = 'https://via.placeholder.com/150';
@@ -21,21 +21,21 @@ function generateMovieDBUrl(path) {
 // Retrieve the top rated movies
 function getTopRatedMovies() {
     let url = generateMovieDBUrl(`/movie/top_rated`);
-    let render = renderMovies.bind({ title: 'Top Rated Movies' })
+    let render = renderMovies.bind({ title: 'Top Rated Movies' });
     requestMovies(url, render, handleGeneralError);
 }
 
 // Retrieve trending movies
 function getTrendingMovies() {
     let url = generateMovieDBUrl('/trending/movie/day');
-    let render = renderMovies.bind({ title: 'Trending Movies' })
+    let render = renderMovies.bind({ title: 'Trending Movies' });
     requestMovies(url, render, handleGeneralError);
 }
 
 // Retrieve upcoming movies 
 function searchUpcomingMovies() {
     let url = generateMovieDBUrl('/movie/upcoming');
-    let render = renderMovies.bind({ title: 'Upcoming Movies' })
+    let render = renderMovies.bind({ title: 'Upcoming Movies' });
     requestMovies(url, render, handleGeneralError);
 }
 
