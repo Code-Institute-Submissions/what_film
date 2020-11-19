@@ -2,17 +2,18 @@
 <h3>Third Milestone Project: Data Centric Development - Code Institute</h3>
 <h4>By Lewis Hamilton</h4>
 <hr>
-<p><a href="https://lewejuice.github.io/starwars-quiz/" rel="nofollow" target="_blank">Star Wars quiz</a> is an interactive trivia game with a Star Wars theme.</p>
+<p><a href="http://what-film.herokuapp.com/" rel="nofollow" target="_blank">What film?</a> Is a datacentric based movie review website.</p>
 <br>
-<p>I have built this game to engage and challenge true star wars fans. It has been designed so that it is easy to follow, offers different path ways to the user, flows easily from one section to the next and is fully responsive to the users chosen device.</p>
+<p>I have built this application to engage movie critics and everyday people alike. Designed to be simplistic yet elegant, enabling users to create their own personal account, search for movies to find what their about, what others have said about it and also an official rating and rating given by other users. Very userfriendly, easy to navigate and is fully responsive to the users chosen device.</p>
 <br>
-<p>The use of interactive buttons and sound effects have been implemented to stimulate the users senses and aid in the users immersion as they play the game.</p>
+<p>The implementation of TMDB API provides a complete collection of all movies, complemented by MongoDB to build collections of user profiles, reviews and ratings, gives a complete fully functioning movie review application.</p>
+<p>The application allows people to see honest reviews from everyday people, while also giving users a platform to share their own thoughts and debate with others.</p>
 <br>
-<p>I have used HTML, CSS, Bootstrap Framework, jQuery and JavaScript for this project, which will form part of my ongoing portfolio of work.</p>
-<a target="_blank" rel="noopener noreferrer" href="#"><img src="assets/images/star-quiz.png" alt="Desktop Demo" title="Desktop Demo" style="max-width:100%;"></a>
+<p>I have used HTML, CSS, Materialize, jQuery, JavaScript, Jinja, Flask, MongoDB and Python for this project, which will form part of my ongoing portfolio of work.</p>
+<img src="images/what-film-mockup.jpg" alt="Desktop Demo" title="Desktop Demo" style="max-width:100%;">
 <br>
 <h3>Demo</h3>
-<p>A live demo can be found here <a href="https://lewejuice.github.io/starwars-quiz/" rel="nofollow" target="_blank">here</a>.</p>
+<p>A live demo can be found here <a href="https://what-film.herokuapp.com/" rel="nofollow" target="_blank">here</a>.</p>
 <br>
 <h2><a id="user-content-table-of-contents" class="anchor" aria-hidden="true" href="#table-of-contents"></a>Table of Contents</h2>
 <ol>
@@ -70,50 +71,47 @@
 <p>As a user:</p>
 <ul>
 <li>
-<p>I want the landing page to engage me instantly, as this will encourage me to go on further and actually play the game.</p>
+<p>I want the landing page to clearly represent what type of application im on, and give me options of engagment instantly, as this will encourage me to go on further and explore the site.</p>
 </li>
 <li>
 <p>Manouvering around the site needs to be made clear and instructive wihtout any confusion.</p>
 </li>
 <li>
-<p>The quiz needs to be accessible and straightforward, with instructions and a mute button if needed.</p>
+<p>Creating my own account needs to be striaght forward and quick.</p>
 </li>
 <li>
-<p>I want to make the game personal to myself, so it gives me a unique experience.</p>
+<p>Finding the movie of my choice needs to easy to find and navigate too.</p>
 </li>
 <li>
-<p>I want to be able to share my score with my friends, and compare.</p>
+<p>I want to be able to share my thoughts on the movies I watch and compare with what others think.</p>
 </li>
 <li>
-<p>I want to be able to stay updated with my correct and wrong answers during the quiz.</p>
+<p>I want to be able to see new movies coming out soon.</p>
 </li>
 <li>
-<p>I want to be able to see how long I have to answer each question.</p>
+<p>I want the application to help me figure out if a movie is worth watching or not.</p>
 </li>
 <li>
-<p>I want the questions to be randomised so they are not the same as previous games.</p>
+<p>I want to be able to update my personal details or delete them if need be.</p>
 </li>
 </ul>
 <h2><a id="user-content-design-choices" class="anchor" aria-hidden="true" href="#design-choices"></a>Design Choices</h2>
 <h3><a id="user-content-colours" class="anchor" aria-hidden="true" href="#colours"></a>Colours</h3>
 <ul>
 <li>
-<p><strong>Template and Modal</strong> - I decided to use <code>#FEDA4A</code>(Yellow) as this is the actual star wars logo colour and it also helped the content stand out against the various buttons, backgrounds and images used throughout the site. The colour had an warm feel to me and gave me sense of Star Wars resemblence and nostalgia, which is the main aim.</p>
+<p><strong>Navbar</strong> - I decided to use <code>#711324</code>(Dark red) as I feel this colour represents the red curtains at cinemas, which should give the user a movie feel.</p>
 </li>
 <li>
-<p><strong>Buttons and Icons</strong> - I decided to use red and blue which bares resemblence to the colours of the lightsabers in Star Wars(Light and Dark). This further adds to the Star Wars theme aswell as standing out against other images and colours.</p>
+<p><strong>Buttons and Icons</strong> - I decided to use red and blue which represents confirmation or cancel. Also it stands out against the black and white backgrounds.</p>
 </li>
 <li>
-<p><strong>Font Colour</strong> - I decided to use <code>#FEDA4A</code>(Yellow) &amp; <code>#000000</code>(Black) for the text as it keeps with the theme, plus I also like when text feels like a hole through it's canvas it sits on, which this achieves.</p>
+<p><strong>Font Colour</strong> - I decided to use <code>#FFFFFF</code>(White) &amp; <code>#000000</code>(Black) for the text as it keeps with the simplistic theme, but also stands out against the background colours.</p>
 </li>
 </ul>
 <h3><a id="user-content-fonts" class="anchor" aria-hidden="true" href="#fonts"></a>Fonts</h3>
 <ul>
 <li>
-<p><a href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Staatliches&display=swap" rel="nofollow"><strong>Staatliches</strong></a> - I used this font for everything. I felt that it had a space, computer vibe to it, plus it was very bold to help stand out.</p>
-</li>
-<li>
-<p><a href="<https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&display=swap" rel="stylesheet">" rel="nofollow"><strong>Pathway Gothic One</strong></a> - I used this font for quiz questions and answers on smaller screens as I found it was easier to read.</p>
+<p><a href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="nofollow"><strong>Roboto</strong></a> - I used this font throughout the site, as I feel it fit in with the clean design, while also bold enough to stand out for readability.</p>
 </li>
 </ul>
 <h3><a id="user-content-wireframes" class="anchor" aria-hidden="true" href="#wireframes"></a>Wireframes</h3>
