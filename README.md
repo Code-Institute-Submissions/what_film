@@ -55,7 +55,7 @@
 <li>
 <p><a href="#credits"><strong>Credits</strong></a></p>
 <ul>
-<li><a href="#music-and-sound-effects"><strong>Music and Sound Effects</strong></a></li>
+<li><a href="#api"><strong>Music and Sound Effects</strong></a></li>
 <li><a href="#images"><strong>Images</strong></a></li>
 <li><a href="#code-credits"><strong>Code Credits</strong></a></li>
 <li><a href="#learning-resources"><strong>Learning Resources</strong></a></li>
@@ -340,7 +340,7 @@
 <ul>
 <li>
 <p>Here is an example:</p>
-<p><code>git clone https://github.com/lewejuice/starwars-quiz.git</code></p>
+<p><code>git clone https://github.com/lewejuice/what_film.git</code></p>
 </li>
 </ul>
 </li>
@@ -352,31 +352,31 @@
 </li>
 </ol>
 <h2><a id="user-content-credits" class="anchor" aria-hidden="true" href="#credits"></a>Credits</h2>
-<h3><a id="user-content-music-and-sound-effects" class="anchor" aria-hidden="true" href="#music-and-sound-effects"></a>Music and Sound Effects</h3>
+<h3><a id="api" class="anchor" aria-hidden="true" href="#api"></a>Images & Data</h3>
 <ol>
 <li>
-<p>The music playing throughout the quiz question pages are from <a href="https://www.soundboard.com/sb/starwars" rel="nofollow">soundboard.com</a>.</p>
-</li>
-<li>
-<p>All sound effects were obtained from <a href="http://www.galaxyfaraway.com/gfa/1998/12/star-wars-sounds-archive/" rel="nofollow">galaxyfaraway.com</a>.</p>
+<p>An API called <a href="https://www.themoviedb.org/" rel="nofollow">TMDB(The Internet Movie Database)</a> was used to get all the data and images.</p>
 </li>
 </ol>
-<h3><a id="user-content-images" class="anchor" aria-hidden="true" href="#images"></a>Images</h3>
+<h3><a id="logo" class="anchor" aria-hidden="true" href="#logo"></a>Fonts</h3>
 <ol>
 <li>
-<p>The images used in the game are from <a href="https://www.google.com/" rel="nofollow">Google Images</a> which I selected the tool labelled for reuse:</p>
+<p>The typeface used for the logo was from a website called <a href="https://www.dafont.com/" rel="nofollow">Dafont</a>.</p>
 </li>
 <li>
-<p>The image used at the beginning of the README.md showing the series of different layouts was created using <a href="http://ami.responsivedesign.is/#" rel="nofollow">Am I Responsive Design</a>.</p>
+<p>The typeface used throughout was from <a href="https://fonts.google.com/" rel="nofollow">Google Fonts</a>, called Roboto.</p>
 </li>
 </ol>
 <h3><a id="user-content-code-credits" class="anchor" aria-hidden="true" href="#code-credits"></a>Code Credits</h3>
 <ol>
 <li>
-<p>The crawling introduction was taken from <a href="https://css-tricks.com/snippets/css/star-wars-crawl-text/" rel="nofollow">css-tricks</a>.</p>
+<p><a href="https://www.themoviedb.org/" rel="nofollow">TMDB</a> provided some useful documentation to get the data needed.</p>
 </li>
 <li>
-<p>The moving star background on my homepage was taken from <a href="https://codepen.io/bts/pen/BygMzB" rel="nofollow">codepen</a>.</p>
+<p>An extremely useful tool I used was <a href="https://stackoverflow.com/" rel="nofollow">Stack Overflow</a>, for help with many syntax and functions.</p>
+</li>
+<li>
+<p>I used <a href="https://www.youtube.com/" rel="nofollow">Youtube</a>, for useful tutorials if I wanted to implement something new that I didn't understand.</p>
 </li>
 </ol>
 <h3><a id="user-content-acknowledgements" class="anchor" aria-hidden="true" href="#acknowledgements"></a>Acknowledgements</h3>
@@ -387,7 +387,7 @@
 <h3><a id="user-content-learning-resources" class="anchor" aria-hidden="true" href="#learning-resources"></a>Learning Resources</h3>
 <ul>
 <li>
-<p>I have learnt so much from this project from start to finish, and has definetly changed my developing skills for the better, here some resources that helped me along the way:</p>
+<p>I have learnt so much from this project from start to finish, broadening my knowledge on both front and backend development. I found using python extremely interesting and also combining multiple technologies such as databases and Flask. Here are some resources that helped me along the way:</p>
 </li>
 <li>
 <p><a href="https://codeinstitute.net/" rel="nofollow">Code Institute</a>.</p>
@@ -396,10 +396,13 @@
 <p><a href="https://www.codecademy.com/" rel="nofollow">Codecademy</a>.</p>
 </li>
 <li>
-<p><a href="https://codepen.io/" rel="nofollow">Codepen</a>.</p>
+<p><a href="https://stackoverflow.com/" rel="nofollow">Stack Overflow</a>.</p>
 </li>
 <li>
 <p><a href="https://www.w3schools.com/" rel="nofollow">w3schools</a>.</p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/" rel="nofollow">Youtube</a>.</p>
 </li>
 </ul>
 <h2><a id="user-content-disclaimer" class="anchor" aria-hidden="true" href="#disclaimer"></a>Disclaimer</h2>
