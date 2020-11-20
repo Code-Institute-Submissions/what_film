@@ -1,6 +1,6 @@
 <div id="readme" class="Box-body readme blob js-code-block-container p-5 p-xl-6">
-    <article class="markdown-body entry-content container-lg" itemprop="text"><h1><a id="user-content-dwarf-match-testing" class="anchor" aria-hidden="true" href="#dwarf-match-testing"></a>Star Wars Quiz Testing</h1>
-<p>The build of Star Wars Quiz has been tested through a manual process during each stage and on a wide range of browsers &amp; devices.</p>
+    <article class="markdown-body entry-content container-lg" itemprop="text"><h1><a id="user-content-dwarf-match-testing" class="anchor" aria-hidden="true" href="#dwarf-match-testing"></a>What Film? Testing</h1>
+<p>The build of What Film? has been tested through a manual process during each stage and on a wide range of browsers &amp; devices.</p>
 <h2><a id="user-content-table-of-contents" class="anchor" aria-hidden="true" href="#table-of-contents"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Table of Contents</h2>
 <ol>
 <li>
@@ -18,8 +18,8 @@
 <li><a href="#overview"><strong>Overview</strong></a>
 <ul>
 <li><a href="#landing-page"><strong>Landing Page</strong></a></li>
-<li><a href="#modals"><strong>Modal</strong></a></li>
-<li><a href="#game-area"><strong>Game Area</strong></a>
+<li><a href="#modals"><strong>Modals</strong></a></li>
+<li><a href="#game-area"><strong>Forms</strong></a>
 </li>
 </ul>
 </li>
@@ -49,76 +49,83 @@
 <p>HTML - All code was run through the <a href="https://validator.w3.org/" rel="nofollow">W3C HTML Validator</a> to ensure it was valid code and no errors were made.</p>
 </li>
 <li>
-<p>CSS - All styling was run through the <a href="https://jigsaw.w3.org/css-validator/" rel="nofollow">W3C CSS Validator</a> to ensure it was valid and no errors were made.</p>
+<p>CSS - All styling was run through the <a href="https://autoprefixer.github.io/" rel="nofollow">Autoprefixer</a> to ensure it was valid and no errors were made.</p>
 </li>
 <li>
-<p>JavaScript - All my script was run through the <a href="https://jshint.com/" rel="nofollow">JSHint</a> validator to ensure full functionality without errors.</p>
+<p>JavaScript - All my script was run through the <a href="https://jshint.com/" rel="nofollow">JSHint</a> & <a href="https://codebeautify.org/jsvalidate" rel="nofollow">Code Beautify/JavaScript</a> validators to ensure full functionality without errors.</p>
+</li>
+<li>
+<p>Python - All my Python code was run through the <a href="https://extendsclass.com/python-tester.html" rel="nofollow">Python tester</a> to ensure full functionality without errors.</p>
 </li>
 </ul>
 <h2><a id="user-content-testing-against-user-stories" class="anchor" aria-hidden="true" href="#testing-against-user-stories"></a>Testing Against User Stories</h2>
-<p>The below goes through of of the user stores listed in the UX section of the <a href="https://github.com/lewejuice/starwars-quiz/blob/master/README.md">README.md</a>.</p>
+<p>The below goes through of of the user stores listed in the UX section of the <a href="https://github.com/lewejuice/what_film/blob/master/README.md">README.md</a>.</p>
 <p><strong>As a user, I want:</strong></p>
 <ol>
 <li>
-<p>I want the landing page to engage me instantly, as this will encourage me to go on further and actually play the game.</p>
+<p>I want the landing page to clearly represent what type of application im on, and give me options of engagment instantly, as this will encourage me to go on further and explore the site.</p>
 <ul>
-<li>The landing page is an introduction to the game which instantly relates the game to star wars with it's star wars crawling text. For users returning to the game there is an optional skip button so they dont have to sit through this every time</li>
-<li>The background image on the home page has been animated through the use of JavaScript to give the user the feel of flying through stars which was done to again, build the star wars feel.</li>
-<li>The colour scheme used is consistent throughout, and matches the star wars colours.</li>
-<li>The use of the lightsaber images programed to appear when the button is hovered on, along with lightsaber sound effects, is a fun interactive take on simply pressing a button.</li>
+<li>The landing page has a variety of different movie posters that have different headings i.e. Trending movies, Popular movies etc. These movie posters instantly tell the user it is a movie related website.</li>
+<li>The dark deep red used for the navbar relates to the cinema curtains to add further to movie theme.</li>
+<li>The hover and scroll animations on the movie posters give the site a sleek professional feel to give users confidence in the sites ability.</li>
 </ul>
 </li>
 <li>
 <p>Manouvering around the site needs to be made clear and instructive wihtout any confusion.</p>
 <ul>
-<li>All buttons are clearly marked with either text or an icon.</li>
-<li>Once the quiz has started it has a clear, understandable structure, with a timer letting the user know how long they have to answer the question.</li>
+<li>The navbar on both desktop and mobile screens are simple and instructive to navigate efficiently through the site.</li>
+<li>All buttons are clearly marked with either text or an icon, as well as colours to represent confirm or cancel.</li>
+<li>The scrolling through the different movie collections is simple and clear, but also paired with a user friendly search bar.</li>
 </ul>
 </li>
 <li>
-<p>The quiz needs to be accessible and straightforward, with instructions and a mute button if needed.</p>
+<p>Creating my own account needs to be striaght forward and quick.</p>
 <ul>
-<li>All options and instructions are accessible in clear manor, with a simple to follow structure.</li>
-<li>The audio control has been kept as basic as possible, with a speaker icon with either sound or an 'X' for mute, to visually tell the user if the sound is on or off.</li>
+<li>The log in page can be navigated to easily through the navbar or through attempting to do an activity which requires the user to login</li>
+<li>The registration form is made up of only three inputs, and doesn't ask for irrelevent information.</li>
 </ul>
 </li>
 <li>
-<p>I want to make the game personal to myself, so it gives me a unique experience.</p>
+<p>Finding the movie of my choice needs to be easy to find and navigate too.</p>
 <ul>
-<li>This is acomplished through an optional pathway between light and dark(good or evil), which will completely change the audio, images and questions.</li>
-<li>It also randomises the questions each time, so users will get different questions each time.</li>
-<li>Also depending on the users choices previously and the score they obtain, will asign the user with a star wars character that matches their choices.</li>
+<li>A search bar has been included so a user can quickly find a specific film, once they have typed out the title they can press the enter button to submit the search or press the search icon.</li>
+<li>The search results are displayed in a similar way to the other movie posters to fit in perfectly with the site layout. The results displayed show multiple options that match the title or word they have searched for.</li>
+<li>The homepage movie collections are extremely useful if the user doesn't know exactly what their looking for, and might be curious to find a new movie to watch. These are easily navigated and can be smoothly scrolled through.</li>
 </ul>
 </li>
 <li>
-<p>I want to be able to share my score with my friends, and compare.</p>
+<p>I want to be able to share my thoughts on the movies I watch and compare with what others think.</p>
 <ul>
-<li>This has been acomplished via a social media sharing API from <a href="https://www.shareaholic.com/">Shareaholic</a>. Their API provides buttons to easily transfer the user to their chosen social platform, with a shared post made up.</li>
+<li>This has been acomplished by giving users the ability to review and rate movies and also list others reviews and ratings on each movies information page.</li>
+<li>The ratings given for each movie are averaged and displayed on the information page to give a user an efficient idea of what the majority think.</li>
+<li>To acomplish these reviews and ratings, a NoSQL database called mongoDB has been used to store them when the user submits them, and they are organised by the movieId.</li>
 </ul>
 </li>
 <li>
-<p>I want to be able to stay updated with my correct and wrong answers during the quiz how long I have to answer a question.</p>
+<p>I want to be able to see new movies coming out soon.</p>
 <ul>
-<li>Throughout the quiz it has star wars style icons, that represent each question, which turn blue or red depending on the right or wrong answer.</li>
+<li>On the homepage, I have included a collection of movies titled Upcoming Movies, which is a collection that TMDB API provides.</li>
 </ul>
 </li>
 <li>
-<p>I want to be able to see how long I have to answer each question.</p>
+<p>I want the application to help me figure out if a movie is worth watching or not.</p>
 <ul>
-<li>A timer counting down from twenty is also clearly shown, which restarts with each question and when the timer ends, it will render the question wrong and move on.</li>
+<li>Not only does the site average out the ratings given by all the users, it also displays an official rating and synopsis for each movie, which it derives from the TMDB API.</li>
 </ul>
 </li>
 <li>
-<p>I want the questions to be randomised so they are not the same as previous games.</p>
+<p>I want to be able to update my personal details or delete them if need be.</p>
 <ul>
-<li>Through JavaScript, the quiz has been programed to pick at random, ten questions from fifty on each side(light or dark), to ensure the user doesn't repeat the same questions each time.</li>
+<li>I have included an account page where the user can view thier information if they are logged into their account, otherwise it will take them to the log in screen.</li>
+<li>The account page is also a form where the user can change their username, email, password or all of them. This form upon submit and with the correct password provided, then updates the database with the new information.</li>
+<li>It also has a button named "Remove Account", which when pressed brings up a modal where the user can enter their password and click remove account, and then that account and all reviews they have made will be deleted.</li>
 </ul>
 </li>
 </ol>
 <h2><a id="user-content-manual-testing" class="anchor" aria-hidden="true" href="#manual-testing"></a>Manual Testing</h2>
-<p>I have included the manual testing processes which took place during the development stage to ensure that all aspects of the quiz work as intended.</p>
+<p>I have included the manual testing processes which took place during the development stage to ensure that all aspects of the site work as intended.</p>
 <h3><a id="user-content-responsive-design-testing" class="anchor" aria-hidden="true" href="#responsive-design-testing"></a>Responsive Design Testing</h3>
-<p>During the development and testing phase of the site, I used Google Chrome Dev Tools to test the layout as I built my code and viewed each stage on different screen displays to makesure the quiz worked across multiple platforms.</p>
+<p>During the development and testing phase of the site, I used Google Chrome Dev Tools to test the layout as I built my code and viewed each stage on different screen displays to makesure the site is optimized for multiple platforms.</p>
 <p>All testing was performed using:</p>
 <ul>
 <li>Google Chrome</li>
@@ -126,42 +133,42 @@
 <li>Mozilla Firefox</li>
 <li>Safari</li>
 <li>Desktop - Two different screen sizes.</li>
-<li>Mobile Phones - All inclusive devices provided by Chrome dev tools and on an actual iPhone 11 pro.</li>
+<li>Mobile Phones - All inclusive devices provided by Chrome dev tools and on an actual iPhone 12 pro.</li>
 <li>Tablets - All inclusive devices provided by Chrome Dev Tools as well as an iPad Air.</li>
 </ul>
 <h4><a id="user-content-overview" class="anchor" aria-hidden="true" href="#overview"></a>Overview</h4>
-<p>Star Wars Quiz was designed and built to be displayed and used on multiple devices such as mobile phones, tablets, desktops.</p>
+<p>What Film? was designed and built to be displayed and used on multiple devices such as mobile phones, tablets, desktops.</p>
 <p>Throughout the testing I made notes on what elements needed work and altered them accordingly.</p>
-<p>The main quiz page was designed using the Bootstrap Framework, which was extremely useful in honing the sites full flexibility. Some elements had to be made to measure, instead of letting the element size changing itself to adapt to a new space.</p>
+<p>The site used the Materialize Framework, which was extremely useful in honing the sites full flexibility and creating a tidy grid layout. With further styling to complement, enabled elements to adapt to different screen sizes.</p>
 <h5><a id="user-content-landing-page" class="anchor" aria-hidden="true" href="#landing-page"></a>Landing and Home Page</h5>
-<p>The landing page was a tricky obstical, due to it's animated text, I had to makesure the time span wasn't too long for the user, while also making sure the full text displayed, I managed to change the letter and line spacing to achieve the desired outcome.</p>
 <ul>
 <li>
-<p>I tested all text and buttons on the landing and home page so that it remained clearly visible on multiple platforms.</p>
+<p>The landing page was quite straightforward as materialize adapted the navbar for multiple screen sizes and then movie poster collections displayed and worked well on all screen sizes.</p>
 </li>
 <li>
-<p>Another tool which improved the sites responsiveness to multiple screen sizes was the online CSS <a href="https://autoprefixer.github.io/" rel="nofollow">Autoprefixer</a>.</p>
+<p>I tested all text and buttons on the landing page so that it remained clearly visible on multiple platforms.</p>
+</li>
 </ul>
 <ul>
 <li>
-<p>Bug Identified - Lightsaber Button Glitch</p>
-<li>The animation used for the 'light' and 'dark' buttons had a problem on screens smaller than desktop, where the light saber would travel out of alignment.</li>
+<p>Bug Identified - Navbar on Ipad pro</p>
+<li>Materialize did not recognise ipad pro as a mobile styled screen layout, so it was still displayed as a desktop</li>
 <p>Fix Applied:</p>
-<p>In order to correct this issue I had to remove them on smaller screen sizes, while increasing the button size using the CSS <code>@media (min-width:)</code> which although, did make the smalller screen version a little less interactive, but it was more functional and asthetically pleasing.</li>
+<p>In order to correct this issue I had to personalize the navbar styling with CSS <code>@media (min-width:max-width)</code> which makes the site on ipad pro more functional and asthetically pleasing.</li>
 </ul>
-<h5><a id="user-content-modals" class="anchor" aria-hidden="true" href="#modals"></a>Instruction Modal</h5>
-<p>I tested the instruction modal on a variety of screen sizes, and found on a mobile phone, it worked better filling the entire screen, instead of just a pop up.</p>
-<p>Bug Discovered - A large ammount of blank space at the bottom of the modal on larger screen sizes</p>
+<h5><a id="user-content-modals" class="anchor" aria-hidden="true" href="#modals"></a>Modals</h5>
+<p>I tested the instruction modal on a variety of screen sizes, and found on a mobile phone, the modals were far too small to read and the buttons were too small to press.</p>
+<p>Bug Discovered - Modals on small screens</p>
 <ul>
-<li>The ammount of space is obvious to user, as the text was small and hard to read and would need to zoom in to see it.</li>
+<li>Modals were too small and unusable on mobile screens.</li>
 </ul>
 </ul>
 <p>Fix Applied:</p>
 <ul>
-<li>This issue was fixed by creating a custom screen width in dev tools to resemble a large monitor, and adjusting the size with css so the text was easier to read and filled up more space on the screen.</li>
+<li>Using the media rule, I enlarged the size of the modal and it's contents.</li>
 </ul>
 </ul>
-<h4><a id="user-content-game-area" class="anchor" aria-hidden="true" href="#game-area"></a>Game Area</h4>
+<h4><a id="forms" class="anchor" aria-hidden="true" href="#forms"></a>Forms</h4>
 <p>The quiz area is the main aspect of the game, so I wanted to thoroughly test it, to makesure, no matter what device it is being dislayed on, or which question is being displayed, I wanted it to look and feel exactly as a user would want.</p>
 <br>
 <p><strong>Progression Structure</strong></p>

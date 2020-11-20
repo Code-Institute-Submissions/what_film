@@ -80,7 +80,7 @@
 <p>Creating my own account needs to be striaght forward and quick.</p>
 </li>
 <li>
-<p>Finding the movie of my choice needs to easy to find and navigate too.</p>
+<p>Finding the movie of my choice needs to be easy to find and navigate too.</p>
 </li>
 <li>
 <p>I want to be able to share my thoughts on the movies I watch and compare with what others think.</p>
@@ -387,7 +387,7 @@
 <h3><a id="user-content-learning-resources" class="anchor" aria-hidden="true" href="#learning-resources"></a>Learning Resources</h3>
 <ul>
 <li>
-<p>I have learnt so much from this project from start to finish, broadening my knowledge on both front and backend development. I found using python extremely interesting and also combining multiple technologies such as databases and Flask. Here are some resources that helped me along the way:</p>
+<p>I have learnt so much from this project from start to finish, broadening my knowledge on both front and backend development. I found using Python extremely interesting and also combining multiple technologies such as databases and Flask. Here are some resources that helped me along the way:</p>
 </li>
 <li>
 <p><a href="https://codeinstitute.net/" rel="nofollow">Code Institute</a>.</p>
