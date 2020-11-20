@@ -117,30 +117,24 @@
 <h3><a id="user-content-wireframes" class="anchor" aria-hidden="true" href="#wireframes"></a>Wireframes</h3>
 <ul>
 <li>
-<p>The wireframes for the initial layout of the website were created using <a href="https://whimsical.com/" rel="nofollow">whimsical</a> and you can view the wireframes for Star Wars Quiz <a href="https://github.com/Andy-Osborne/Dwarf-Match/tree/master/wireframes">here</a>.</p>
+<p>The wireframes for the initial layout in the planning stage of the website were created using <a href="https://balsamiq.com/" rel="nofollow">Balsamiq</a>. You can view the wireframes for What Film? <a href="https://github.com/lewejuice/what_film/tree/master/wireframes">here</a>.</p>
 </li>
 <li>
-<p>The wireframes include a design layout for Desktop, Tablet, and Mobile.</p>
+<p>The wireframes include a design layout for Desktop and Mobile.</p>
 </li>
 <li>
 <p>The colour scheme I had in mind when designing the mockups was not available on the site.</p>
 </li>
 </ul>
 <h4><a id="user-content-variation-between-wireframes-and-final-product" class="anchor" aria-hidden="true" href="#variation-between-wireframes-and-final-product"></a>Variation Between Wireframes and Final Product</h4>
-<p>During the styling phase of the website I stuck to the original wireframe design, only adding slighty more detail and content like:</p>
+<p>I only made a couple changes from the initial design plan, as certain things I feel didn't work while building the site:</p>
 <h5><a id="user-content-landing-page" class="anchor" aria-hidden="true" href="#landing-page"></a>Landing Page</h5>
 <ul>
-<li>The entrance scrolling credits and the moving star background on the.</li>
+<li>For the homescreen I changed to show multiple catergories with movie posters to engage users instantly, instead of having them navigate to a categorie.</li>
 </ul>
 <h4><a id="user-content-level-select-modal" class="anchor" aria-hidden="true" href="#level-select-modal"></a>Modal</h4>
 <ul>
-<li>I did not include the design for my modal, as that was added at a later date.</li>
-</ul>
-<h4><a id="user-content-audio-control-modal" class="anchor" aria-hidden="true" href="#audio-control-modal"></a>Social sharing icons</h4>
-<ul>
-<li>
-<p>I did not include the social sharing icons as I thought later on that people would like to share their score with others.</p>
-</li>
+<li>I did not include the design for my modal as I thought, instead of loading a new page, a modal window pop up is more efficient.</li>
 </ul>
 <h2><a id="user-content-technologies-used" class="anchor" aria-hidden="true" href="#technologies-used"></a>Technologies Used</h2>
 <ol>
@@ -151,101 +145,129 @@
 <p><a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets" rel="nofollow">CSS</a> - This was used for the styling of elements on the website.</p>
 </li>
 <li>
-<p><a href="https://en.wikipedia.org/wiki/JavaScript" rel="nofollow">JavaScript</a> - This was used to input all the technical commands from animated objects, sounds to the main core functions of the game.</p>
+<p><a href="https://en.wikipedia.org/wiki/JavaScript" rel="nofollow">JavaScript</a> - This was mainly used to retrieve and display data from the API, but also a couple small animations i.e displaying the modals.</p>
 </li>
 <li>
 <p><a href="https://en.wikipedia.org/wiki/JQuery" rel="nofollow">jQuery</a> - This was used in my javascript files to help achieve complex ideas in a simpler way.</p>
 </li>
 <li>
-<p><a href="https://getbootstrap.com/" rel="nofollow">Bootstrap Framework</a> - This was used to create a well structured grid layout.</p>
+<p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)" rel="nofollow">Python</a> - This was used for the majority of the backend development of the site, from using CRUD functionality with forms and database collections, to navigating the website through different html templates.</p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Flask_(web_framework)" rel="nofollow">Flask</a> - This was used to add more sophisticated features in a simpler way, from form validation to it's extremely useful jinja functions in HTML.</p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/MongoDB" rel="nofollow">MongoDB</a> - This NoSQL database program was used to store all the data from user information, to the movie reviews and ratings.</p>
+</li>
+<li>
+<p><a href="https://getbootstrap.com/" rel="nofollow">Materialize Framework</a> - This was used to create a well structured grid layout, forms and icons.</p>
 </li>
 <li>
 <p><a href="https://fonts.google.com/" rel="nofollow">Google Fonts</a> - I used Google Fonts to source the fonts I used on the website.</p>
 </li>
 <li>
+<p><a href="https://www.themoviedb.org/" rel="nofollow">TMDB</a> - This was the API i chose to go with for retrieving all the movie data for my application, that is updated regularly.</p>
+</li>
+<li>
 <p><a href="https://github.com/">GitHub</a> - I used to store my repository for the project and record all my commits.</p>
 </li>
 <li>
-<p><a href="https://pages.github.com/">GitHub Pages</a> - I used to deploy my website.</p>
+<p><a href="https://www.heroku.com/">Heroku</a> - I used to deploy my website, and store my enviroment variables.</p>
 </li>
 <li>
-<p><a href="https://en.wikipedia.org/wiki/Adobe_Illustrator" rel="nofollow">Adobe Illustrator</a> - I used to design and build the main heading of the game.</p>
+<p><a href="https://validator.w3.org/" rel="nofollow">Markup Validation service</a> - I used this to make sure my HTML had no errors or faults.</p>
 </li>
 <li>
-<p><a href="https://autoprefixer.github.io/" rel="nofollow">Autoprefixer</a> - I used this project to make sure all CSS prefixes were exact for the best optimization.</p>
+<p><a href="https://autoprefixer.github.io/" rel="nofollow">Autoprefixer</a> - I used this to make sure all CSS prefixes were exact for the best optimization.</p>
 </li>
 <li>
-<p><a href="https://www.shareaholic.com/" rel="nofollow">Social sharing API</a> - I wanted to implement this API so users could easily share their scores via social media, which inturn brings more users.</p>
+<p><a href="https://extendsclass.com/python-tester.html" rel="nofollow">Python tester</a> - I used this to make sure all my Python syntax had no faults.</p>
+</li>
+<li>
+<p><a href="https://codebeautify.org/jsvalidate" rel="nofollow">Code Beautify/JavaScript</a> - I used this to make sure all my JavaScript had no faults.</p>
 </li>
 </ol>
 <h2><a id="user-content-features" class="anchor" aria-hidden="true" href="#features"></a>Features</h2>
 <h3><a id="user-content-existing-features" class="anchor" aria-hidden="true" href="#existing-features"></a>Existing Features</h3>
-<p>Intro Page</p>
-<ul>
-<li>
-<p>The introduction page features a brief introduction to the game which is animated to look like the opening sequence of Star Wars movies.</p>
-</li>
 <p>Landing Page</p>
 <ul>
 <li>
-<p>The landing page features an animated background of moving stars to give the notion that the heading is flying, the heading itself is designed to look like the star wars logo.</p>
+<p>The landing page starts with a screen size optimized navbar to help navigate the site, and also displays log in if no user account is logged or log out if vice versa.</p>
 </li>
 <li>
-<p>There is also a two button option of which side the user wants to take(light or dark) and on full monitors, when hovering over the button, a blue lightsaber appears out of the lightside button and red out of the other, with lightsaber audio also.</p>
+<p>There is also a search bar to help users find the movie their looking for effieciently, which then displays a collection of possible movie posters matching their search input</p>
 </li>
 <li>
-<p>Also I have included a sound icon so the user can easily switch the sound on and off.</p>
-</li>
-</ul>
-<p>Start Menu</p>
-<ul>
-<li>
-<p>The start menu is made up of three large buttons, which can either take you back to the landing page, start the quiz, or bring up the instructions, these buttons also produce sounds on click.</p>
+<p>Also a collection of catergroised movie posters are displayed under certain headings i.e Trending movies. They are elgantly animated and can be scrolled through.</p>
 </li>
 </ul>
-<p>Instruction Modal</p>
+<p>Movie Information page</p>
 <ul>
 <li>
-<p>When the instructions button is clicked a bordered pop up window appears displaying the instructions to the game.</p>
+<p>The Movie information page includes main information about the movie selected i.e Title, release date and synopsis.</p>
 </li>
 <li>
-<p>The user can easily close this window via the cross icon, which also makes a sound on close.</p>
+<p>Also two ratings are displayed. One is an official rating pulled from the API and the other is a rating from the sites users which is an average of all the ratings given.</p>
+</li>
+<li>
+<p>There is also a list of reviews and ratings in table format, displaying the username, review and rating given.</p>
 </li>
 </ul>
-<p>Quiz Area</p>
+<p>Review Modal</p>
 <ul>
 <li>
-<p>The quiz area is made up of a grid containing an image, question and four possible answers.</p>
+<p>The review modal displays a message telling the user to log in to write a review with a link to the log in screen below.</p>
 </li>
 <li>
-<p>This grid is flexible and adjusts for different screen sizes.</p>
-</li>
-<li>
-<p>Below the grid is a series of icons which represent each question, turning blue for a correct answer and red for a wrong answer.</p>
-</li>
-<li>
-<p>The user is also notified of right and wrong answers by the sound the game makes after they have selected their answer, which can be muted in the bottom left corner.</p>
+<p>Once logged in, it has a text area input for the review and then a number choosing input between 1-10 for the rating with a submit or cancel button.</p>
 </li>
 </ul>
-<p>Game Counter and Timer</p>
+<p>Log in page</p>
 <ul>
 <li>
-<p>When a user starts the quiz, there is an active timer that starts the moment the site renders the question, counting down from twenty.</p>
+<p>The log in page is made up of a simple form asking for the users username and password.</p>
 </li>
 <li>
-<p>If the timer runs out, the answer will be marked wrong and will automatically progress to the next question, and the timer restarts.</p>
+<p>With the option to log in and submit that information or a register now option which link the user to the registration page.</p>
+</li>
+</ul>
+<p>Registration page</p>
+<ul>
+<li>
+<p>The registration page is made up of a form to create a new user, asking for the users choice of username, password and email.</p>
+</li>
+<li>
+<p>There is a submit button which when clicked will first validate the form checking all the correct information has been provided before then passing it to the backend and stored into the database.</p>
+</li>
+</ul>
+<p>Account page</p>
+<ul>
+<li>
+<p>The account page displays all the users information with input boxes to update or change each detail, apon selecting the submit button the form is then validated to makesure valid information is given.</p>
+</li>
+<li>
+<p>There is also a delele account button which brings up a delete account modal.</p>
+</li>
+</ul>
+<p>Delete account modal</p>
+<ul>
+<li>
+<p>The delete account modal is a simple form asking to confirm the users password.</p>
+</li>
+<li>
+<p>There is then two button options of either delete account or cancel which will close the modal.</p>
+</li>
+<li>
+<p>If delete account is selected and the password provided is correct, the users account details and reviews are then removed from the database.</p>
 </li>
 </ul>
 <h3><a id="user-content-features-to-be-implemented" class="anchor" aria-hidden="true" href="#features-to-be-implemented"></a>Features To Be Implemented</h3>
 <ul>
 <li>
-<p>I want to implement a leaderboard so users of the game can match up their scores against fellow players.</p>
+<p>The next thing I would implement is a feature to remove and maybe edit reviews after the user has submitted them.</p>
 </li>
 <li>
-<p>I want to implement a level system, where the questions get harder each round.</p>
-</li>
-<li>
-<p>I want to implement a restart button so the user doesn't have to go back to the home page every time they want to retry.</p>
+<p>I also would like to implement a chat option for the users so people can discuss movies with others.</p>
 </li>
 </ul>
 <h2><a id="user-content-testing" class="anchor" aria-hidden="true" href="#testing"></a>Testing</h2>
@@ -261,21 +283,36 @@
 <li>
 <p>JavaScript - All my script was run through the <a href="https://jshint.com/" rel="nofollow">JSHint</a> validator to makesure it was clean and valid.</p>
 </li>
+<li>
+<p>Python - All my script was run through the <a href="https://extendsclass.com/python-tester.html" rel="nofollow">Python tester</a> to make sure all my Python syntax had no faults.</p>
+</li>
 </ul>
 <h3><a id="user-content-manual-testing" class="anchor" aria-hidden="true" href="#manual-testing"></a>Manual Testing</h3>
-<p>You can view the testing done in the <a href="https://github.com/lewejuice/starwars-quiz/blob/master/test.md">test.md</a> where I have written in-depth on the various tests I have performed.</p>
+<p>You can view the testing done in the <a href="https://github.com/lewejuice/what_film/blob/master/test.md">test.md</a> where I have written in-depth on the various tests I have performed.</p>
 <h2><a id="user-content-deployment" class="anchor" aria-hidden="true" href="#deployment"></a>Deployment</h2>
-<p>I developed this project using <a href="https://www.gitpod.io/" rel="nofollow">Gitpod</a>. Version control was done using git and hosting the repository was done through GitHub.</p>
-<p>The live site was deployed via GitHub Pages and is and stems directly from the master branch. The deployed site will update automatically upon new commits to the master branch. In order for the site to deploy correctly on GitHub pages, the opening page must be named <code>index.html</code>.</p>
-<p>To deploy Star Wars Quiz from its <a href="https://github.com/Andy-Osborne/Dwarf-Match">repository in GitHub</a>, I completed the following steps:</p>
+<p>I developed this project using <a href="https://www.gitpod.io/" rel="nofollow">Gitpod</a>. Version control was done using git and hosting the repository was done through <a href="https://github.com/lewejuice/what_film">repository in GitHub</a>.</p>
+<p>The live site was deployed via <a href="https://www.heroku.com/" rel="nofollow">Heroku</a>. The deployed site will update when pushed from to heroku via gitpod terminal. The Heroku app location can be found <a href="http://what-film.herokuapp.com/">here.</a></p>
+<p>To deploy What Film? from <a href="https://www.gitpod.io/" rel="nofollow">Gitpod</a>, I completed the following steps:</p>
 <ol>
-<li>Log into GitHub</li>
-<li>From the list of repositories, select <a href="https://github.com/lewejuice/starwars-quiz"><strong>lewejuice/starwars-quiz</strong></a>.</li>
-<li>Click on the settings button located just below the Fork option.</li>
-<li>Scroll down the new page to GitHub Pages.</li>
-<li>Select Master Branch from the dropdown menu.</li>
-<li>After selecting Master Branch, the page will refresh and <a href="https://github.com/lewejuice/starwars-quiz/"><strong>Star Wars Quiz</strong></a> is deployed.</li>
-<li>If you scroll back down to the GitHub Pages section after the page refreshes, you can grab your live link to your deployed site.</li>
+<li>Database and Tables were created in an Atlas <a href="https://www.mongodb.com/" rel="nofollow">MongoDB</a> account</li>
+<li>Project workspace was created in <a href="https://www.gitpod.io/" rel="nofollow">Gitpod</a>. In this workspace: Flask was installed - <code>pip3 install Flask</code>.</li>
+<li>Setup app.py file and imported flask and os - <code>from flask import Flask. import os</code></li>
+<li>Created an instance of flask - <code>app = flask(__name__)</code></li>
+<li>Inside the app run() function set the host, ip and debug=true</li>
+<li>Create a new Heroku App - unique name and EU Server</li>
+<li>Install <a href="https://www.heroku.com/" rel="nofollow">Heroku</a> through the CLI using <code>CLI: npm install -g heroku</code></li>
+<li>In <a href="https://www.gitpod.io/" rel="nofollow">Gitpod</a> login to Heroku through CLI to confirm existance of app. <code>CLI: heroku login -i. CLI: heroku apps</code>.</li>
+<li>Create requirements.txt file - <code>CLI: pip3 freeze --local > requirements.txt</code></li>
+<li>Create Procfile - <code>echo web: python app.py > Procfile</code></li>
+<li>Add and Commit to Git Repository using  <code>CLI: git add .</code> and then <code>CLI: git commit -m "initial commit"</code></li>
+<li>Push to Heroku using <code>CLI: git push heroku</code></li>
+<li><code>CLI - heroku ps:scale web=1</code> Command to tell Heroku to run the app</li>
+<li>Login to Heroku to add config variables including IP, Port, Mongo_DB and Mongo_URI</li>
+<li>Get Flask to talk to MongoDB - <code>CLI: pip3 install pymongo</code> and <code>CLI: pip3 install dnspython</code></li>
+<li>Add extra libraries to app.py - <code>from flask_pymongo import Pymongo</code></li>
+<li>Add DB connection code to app.py which should be stored in enviroment variables.</li>
+<li>Set Debug to False</li>
+<li>Click Open App in <a href="https://www.heroku.com/" rel="nofollow">Heroku</a></li>
 </ol>
 <h3><a id="user-content-to-run-locally" class="anchor" aria-hidden="true" href="#to-run-locally"></a>To Run Locally</h3>
 <p>If you wanted to run this project locally and not use GitHub Pages, you can follow these steps:</p>
