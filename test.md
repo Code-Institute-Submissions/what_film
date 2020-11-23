@@ -125,7 +125,7 @@
 </ul>
 </li>
 </ol>
-<h2><a id="user-content-manual-testing" class="anchor" aria-hidden="true" href="#auto-testing"></a>Automated Testing</h2>
+<h2><a id="auto-testing" class="anchor" aria-hidden="true" href="#auto-testing"></a>Automated Testing</h2>
 <p>Using pythons built-in <a href="https://docs.python.org/3/library/unittest.html" rel="nofollow">Unit Test Framework</a>, automated tests were carried out on routes. A testcase was created by subclassing unittest.TestCase.</p>
 <p>Automated tests were setup and confirmed that all routes behaved correctly i.e 200 - route ok.</p>
 <h2><a id="user-content-manual-testing" class="anchor" aria-hidden="true" href="#manual-testing"></a>Manual Testing</h2>
