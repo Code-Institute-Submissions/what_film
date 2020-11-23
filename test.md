@@ -19,7 +19,7 @@
 <ul>
 <li><a href="#landing-page"><strong>Landing Page</strong></a></li>
 <li><a href="#modals"><strong>Modals</strong></a></li>
-<li><a href="#game-area"><strong>Forms</strong></a>
+<li><a href="#forms"><strong>Forms</strong></a>
 </li>
 </ul>
 </li>
@@ -31,7 +31,7 @@
 <p><a href="#functionality-testing"><strong>Functionality Testing</strong></a></p>
 <ul>
 <li><a href="#overview"><strong>Modal Testing</strong></a></li>
-<li><a href="#audio-and-music-testing"><strong>Audio and Music Testing</strong></a></li>
+<li><a href="#python-testing"><strong>Python Testing</strong></a></li>
 <li><a href="#game-functionality-testing"><strong>Game Functionality Testing</strong></a></li>
 <li><a href="#responsivness-and-browser-compatibilty"><strong>Responsiveness and Broswer compatibilty</strong></a></li>
 </ul>
@@ -162,59 +162,65 @@
 <ul>
 <li>Modals were too small and unusable on mobile screens.</li>
 </ul>
-</ul>
 <p>Fix Applied:</p>
 <ul>
 <li>Using the media rule, I enlarged the size of the modal and it's contents.</li>
 </ul>
 </ul>
 <h4><a id="forms" class="anchor" aria-hidden="true" href="#forms"></a>Forms</h4>
-<p>The quiz area is the main aspect of the game, so I wanted to thoroughly test it, to makesure, no matter what device it is being dislayed on, or which question is being displayed, I wanted it to look and feel exactly as a user would want.</p>
+<p>The forms used throughout the application are a key source of getting data from the user, so they needed to be tested vigorously to ensure they collect valid data but also provide a user friendly experience across all platforms</p>
 <br>
-<p><strong>Progression Structure</strong></p>
+<p><strong>Form Validation</strong></p>
 <ul>
 <li>
-<p>Progressing to the next question when it should was an important aspect of the game, and so I tested this function thoroughly to makesure it did so correctly, but then also knew when the last question came, to progress to the scoreStructure() function.</p>
+<p>I tested the form validation to ensure valid data was being passed to the server.</p>
 </li>
 <li>
-<p>Bug Discovered:</p>
+<p>Bug Discovered - Invalid form inputs</p>
 <ul>
-<li>No bugs were found</li>
+<li>I noticed that even though I was checking on the backend for the forms data lengths to makesure data was there, the user could simply type in special characters or spaces to fill inputs.</li>
+</ul>
+<p>Fix Applied:</p>
+<ul>
+<li>I needed the data to be validated on the frontend, before being sent to the server, so I used <code>required pattern=""</code> on the inputs which disabled the user from submitting invalid data to the server.</li>
 </ul>
 </li>
 </ul>
 </li>
-<p><strong>Exit Function</strong></p>
+<p><strong>Screen size adaptability</strong></p>
 <ul>
 <li>
-<p>I tested that the exit buttons were all working correctly, by refreshing the game which cleared all current game data.</p>
+<p>The forms need to be easily read and understood on all devices.</p>
 </li>
 <li>
-<p>No bugs were discovered with this functionality and it works as intended.</p>
+<p>Bug Discovered - Unusable on mobile devices</p>
+<ul>
+<li>On smaller devices the text inputs were too small to read and the submit buttons were too small to press.</li>
+</ul>
+<p>Fix Applied:</p>
+<ul>
+<li>To fix the input font-sizes, I used a combination of media queries <code>label[class=""]</code>, which enabled me to target the input font-size in all the forms accross the application.</li>
+</ul>
 </li>
 </ul>
 </li>
 </ol>
 </li>
 </ol>
-<h4><a id="user-content-audio-and-music-testing" class="anchor" aria-hidden="true" href="#audio-and-music-testing"></a>Audio and Music Testing</h4>
-<p>Audio tests were carried out extensively on Desktop, Mobile phone, and tablets. They were also tested on a variety of browsers: Google Chrome, Mozilla Firefox and Safari.</p>
-<p>The physical mobile/tablet devices tested on were a Samsung S20, iPhone 11 pro, and an iPad Air and also the devices included in Chrome Dev tools.</p>
+<h4><a id="python-testing" class="anchor" aria-hidden="true" href="#python-testing"></a>Python Testing</h4>
+<p>Thorough testing was carried out on all python functions to ensure the functionality of the application.</p>
 <ol>
 <li>
-<p><strong>Audio &amp; Music</strong></p>
-<ol>
-<li>
-<p><strong>Clicking Sound Effect Function</strong></p>
+<p><strong>Home Function</strong></p>
 <ul>
 <li>
-<p>I firstly tested to wether this function was working correctly, and that it had access to the right audio file, which it did.</p>
+<p>The home function was tested to ensure the site took the user to the homepage first, which was straightforward.</p>
 </li>
 <li>
-<p>I then decided to use the same function structure but for different audio files which played when you clicked other elements, like the instruction modal close button.</p>
+<p>I did not like showing a login and logout button on the same page, so to fix this, in the home function I added <code>if 'username' in session: user = 'username'</code> to check if a user was logged in.</p>
 </li>
 <li>
-<p>I also tested to makesure the audio file did not play, if the sound icon was set to mute.</p>
+<p>To further add to this, in my index.html file I added a jinja function to read if a user was logged in to display only the logout button or if not the login button.</p>
 </li>
 <li>
 <p>No bugs were found.</p>
@@ -222,44 +228,59 @@
 </ul>
 </li>
 <li>
-<p><strong>Wrong/right Sound Effect Function</strong></p>
+<p><strong>Login Function</strong></p>
 <ul>
 <li>
-<p>I tested to makesure that when selecting the wrong or right answer a different sound would play, which gave another way the user could easily distinguish wether they were successful or not.</p>
+<p>The login function was tested to makesure it linked the input data to data stored in the database.</p>
 </li>
 <li>
-<p>Bug Discovered:</p>
+<p>No bugs were found.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Logout Function</strong></p>
 <ul>
-<li>On the last question, when clicking your answer, sound of the answer would overlap the sound given for the score structure. This caused the user not being able to hear either sound which resulted in mixture of noises.</li>
+<li>
+<p>To makesure users were logged out correctly, I tried to post reviews and look at account information after the logout function was invoked, all worked as it should.</p>
+</li>
+<li>
+<p>No bugs were found.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Update Account Function</strong></p>
+<ul>
+<li>
+<p>This was one the most challenging functions to build and test. I tested it by inputing new data to update all information and then just updating one singular piece of data</p>
+</li>
+<li>
+<p>Bug Discovered - Updates all information even when left blank:</p>
+<ul>
+<li>
+<p>When wanting to update only one peice of information, the function was still updating the other pieces of information, so was changing the data to blank in the database.</p>
+</li>
 </ul>
 </li>
 <li>
 <p>Fix Applied:</p>
 <ul>
-<li>Too fix this issue I had to go into my audio.js file and add an if statement <code>if (currentQuestion <= 8)</code> too the right/wongAudio() function, so it would only play if it was on the second to last question or less.</strong></li>
+<li>
+<p>To fix this issue I had to implement a way that it only updated the information that the user wanted by checking what data was input into the form and then having the other information stay exactly how it was.</p>
+</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
-<p><strong>Quiz Complete Audio Function</strong></p>
+<p><strong>Delete Account function</strong></p>
 <ul>
 <li>
-<p>I tested to makesure when the quiz was completed, depending on the side the user chose and the score they got, a unique sound would play.</p>
+<p>To makesure users could remove their personal details and account from the site correctly, I tested this function by creating new accounts and then deleting them, and checking the database to see if it correctly removed that user.</p>
 </li>
 <li>
-<p>I tested that the function does not play if the sound is muted.</p>
-</li>
-<li>
-<p>No bugs were found other than the one earlier mentioned on the wrong/right answer audio function.</p>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>Lightsaber hover audio function</strong></p>
-<ul>
-<li>
-<p>I tested to see if when the light or dark side buttons are hovered over on larger screen sizes, that the audio plays along with the lightsaber animation.</p>
+<p>I also wanted to clear the reviews that user had made, so I left reviews with that user and then deleted them, and checked if they were cleared from the database.</p>
 </li>
 <li>
 <p>No bugs were found.</p>
@@ -267,84 +288,71 @@
 </ul>
 </li>
 <li>
-<p><strong>Quiz background music</strong></p>
+<p><strong>Register function</strong></p>
 <ul>
 <li>
-<p>I tested to makesure as soon as the quiz starts, the audio is played, and then also once the score structure is displayed, the audio stops.</p>
+<p>To test the function I created a range of accounts and then checked if the details were being passed and stored correctly and safely.</p>
 </li>
 <li>
-<p>I also wanted to makesure it was muted, when the sound icon is set to mute.</p>
+<p>Bug Discovered - Passwords visable in mongoDB:</p>
+<ul>
+<li>
+<p>When looking at the database I could see the passwords of all the users stored, which I dont think is very safe.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Fix Applied:</p>
+<ul>
+<li>
+<p>To fix this issue I imported bcrypt to store the passwords in an unreadable secret script.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Movie page function</strong></p>
+<ul>
+<li>
+<p>To test this function I first printed each statement to makesure the right movie Id was being recieved. I then searched multiple movies to check the pages were displaying the correct information, reviews and ratings.</p>
+</li>
+<li>
+<p>Bug Discovered - Section empty when no reviews or rating:</p>
+<ul>
+<li>
+<p>When there are no reviews or rating for the movie in the database, the reviews section would just be an empty table and the rating would be empty also.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Fix Applied:</p>
+<ul>
+<li>
+<p>In the function I added a way of counting the ammount of ratings for that movie, and if none, the rating is "No rating".</p>
+</li>
+<li>
+<p>To fix the reviews, I found the easiest way was to incorperate a Jijna function in the html to check the length of the review and if none were found, it displays "No reviews" instead of a table.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Review function</strong></p>
+<ul>
+<li>
+<p>To test the review function, I tried various inputs of reviews and ratings, and checked the database to see if they were being stored correctly.</p>
 </li>
 <li>
 <p>No bugs were found.</p>
-</li>
-</ul>
-</li>
-</ol>
-</li>
-</ol>
-<h4><a id="user-content-game-functionality-testing" class="anchor" aria-hidden="true" href="#game-functionality-testing"></a>Game Functionality Testing</h4>
-<p>Game functionality tests were carried out extensively on Desktop, Mobile phone, and tablets. They were also tested on a variety of browsers: Google Chrome, Mozilla Firefox and Safari.</p>
-<p>The physical mobile/tablet devices tested on were a Samsung S20, iPhone 11 pro, and an iPad Air and also the devices included in Chrome Dev tools.</p>
-<ol>
-<li>
-<p><strong>Answer check function</strong></p>
-<ul>
-<li>
-<p>I tested that the <code>checkAnswer()</code> function is called when an answer is selected, assuming that all the requirments for the function call have been met and it then moves on to it's next functions to progress further</p>
-</li>
-<li>
-<p>No bugs were found.</p>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>Random Question Function</strong></p>
-<ul>
-<li>
-<p>I tested that the random question function was working correctly, by displaying different questions each time the user plays the quiz.</p>
-</li>
-<li>
-<p>No bugs were found</p>
-</li>
-</ul>
-<li>
-<p><strong>Counter Structure Function</strong></p>
-<ul>
-<li>
-<p>I tested that the counter structure function worked correctly, by counting down from twenty, and if reaching zero, will score the question wrong and move on.</p>
-</li>
-<li>
-<p>No bugs were found</p>
-</li>
-</ul>
-<li>
-<p><strong>Choose side function</strong></p>
-<ul>
-<li>
-<p>I tested this function extensively as it effect almost every function, it's main purpose being that it told the other functions which side was selected on the home-page, so each function could act accordingly.</p>
-</li>
-<li>
-<p>No bugs were found</p>
-</li>
-</ul>
-<li>
-<p><strong>Start Quiz function</strong></p>
-<ul>
-<li>
-<p>I tested that the start quiz function to makesure everything is rendered correctly from the click of the start button.</p>
-</li>
-<li>
-<p>No bugs were found.</p>
-</li>
-</ul>
 </li>
 </ul>
 </li>
 </ol>
 <h4><a id="responsivness-and-browser-compatibilty" class="anchor" aria-hidden="true" href="#responsivness-and-browser-compatibilty"></a>Responsiveness and Broswer compatibilty</h4>
 <p>Tests were carried out on Desktop, Mobile phone, and tablets. They were also tested on a variety of browsers: Google Chrome, Mozilla Firefox and Safari.</p>
-<p>The physical mobile/tablet devices tested on were a Samsung S20, iPhone 11 pro, and an iPad Air and also the devices included in Chrome Dev tools.</p>
+<p>The physical mobile/tablet devices tested on were a Samsung S20, iPhone 12 pro, and an iPad Air and also the devices included in Chrome Dev tools.</p>
 <ol>
 <li>
 <p><strong>Page Render</strong></p>
@@ -353,7 +361,7 @@
 <p>On all broswers and devices, pages all rendered correctly, apart from Ipad pro where there seemed to be allot of empty space on the page.</p>
 </li>
 <li>
-<p>To fix this issue, I changed the CSS styling for that specific screen size to enlarge font-sizes and icon sizes to fill more of the screen.</p>
+<p>To fix this issue, I changed the CSS styling for that specific screen size to enlarge font-sizes and images to fill more on the screen.</p>
 </li>
 </ul>
 </li>
@@ -367,18 +375,6 @@
 <p>No issues were found</p>
 </li>
 </ul>
-<li>
-<p><strong>Media Files</strong></p>
-<ul>
-<li>
-<p>All media files rendered correctly on all devices and browsers except I found the question image would go over it's boundary on mobile screens.</p>
-<p>Also some larger image files on low signal mobile network, would take an excessive ammount of time to load which caused a large issue for questions that needed the image to answer.</p>
-</li>
-<li>
-<p>To fix the first issue I had to change the image width on smaller screen through CSS. The image load time however was a little more complex as I tried to squash down the image files, where I did loose some quality but still worked well for the sizes and screens I was working with.</p>
-</li>
-</ul>
-</li>
 </ul>
 </li>
 </ol>

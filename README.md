@@ -267,6 +267,9 @@
 <p>The next thing I would implement is a feature to remove and maybe edit reviews after the user has submitted them.</p>
 </li>
 <li>
+<p>I would want to incorperate some kind of forgot password feature, where it could email the user with a link to change their password.</p>
+</li>
+<li>
 <p>I also would like to implement a chat option for the users so people can discuss movies with others.</p>
 </li>
 </ul>
