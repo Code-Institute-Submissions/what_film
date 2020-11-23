@@ -33,7 +33,8 @@ def login():
     logged_user = users.find_one({"username": request.form["username"]})
     if logged_user:
         # checks if username matches one in database
-        if bcrypt.hashpw(request.form['password'].encode('utf-8'), logged_user['password']) == logged_user['password']:
+        if bcrypt.hashpw(request.form['password'].encode('utf-8'),
+                         logged_user['password']) == logged_user['password']:
             session["username"] = request.form["username"]
             flash("Welcome back " + session["username"])
             return redirect(url_for("home"))
@@ -51,7 +52,7 @@ def logout():
 
 # displays users account information
 @app.route('/account', methods=['POST', 'GET'])
-def account():   
+def account():
     if 'username' in session:
         # checks if username is in session and then renders the information for that user
         user = mongo.db.users
@@ -65,9 +66,10 @@ def delete_account():
     users = mongo.db.users
     reviews = mongo.db.reviews
     logged_user = users.find_one({"username": session['username']})
-    if bcrypt.hashpw(request.form['old_password'].encode('utf-8'), logged_user['password']) == logged_user['password']:
+    if bcrypt.hashpw(request.form['old_password'].encode('utf-8'),
+                     logged_user['password']) == logged_user['password']:
         # if the password matches the stored password it will delete the user and their reviews
-        myquery = { "username": session['username'] }
+        myquery = {"username": session['username']}
         users.delete_one(myquery)
         reviews.delete_many(myquery)
         session.clear()
@@ -83,9 +85,12 @@ def update_account():
     users = mongo.db.users
     logged_user = users.find_one({"username": session['username']})
     # if the form password matches to stored database password
-    if bcrypt.hashpw(request.form['old_password'].encode('utf-8'), logged_user['password']) == logged_user['password']:
-        hashpass = bcrypt.hashpw(request.form["new_password"].encode("utf-8"), bcrypt.gensalt())
-        oldhashpass = bcrypt.hashpw(request.form["old_password"].encode("utf-8"), bcrypt.gensalt())
+    if bcrypt.hashpw(request.form['old_password'].encode('utf-8'),
+                     logged_user['password']) == logged_user['password']:
+        hashpass = bcrypt.hashpw(request.form["new_password"].encode("utf-8"),
+                                 bcrypt.gensalt())
+        oldhashpass = bcrypt.hashpw(request.form["old_password"].encode("utf-8"),
+                                    bcrypt.gensalt())
         # if a new username, email and password has been given, it updates them all
         if len(request.form["new_username"]) >= 1 and len(request.form["new_email"]) >= 1 and len(request.form["new_password"]) >= 1:
             users.update({'username': session['username']},
@@ -172,12 +177,15 @@ def register():
         existing_user = users.find_one({"username": request.form["username"]})
         # if no username is found that matches the username typed in
         if existing_user is None:
-            hashpass = bcrypt.hashpw(request.form["password"].encode("utf-8"), bcrypt.gensalt())
+            hashpass = bcrypt.hashpw(request.form["password"].encode("utf-8"),
+                                     bcrypt.gensalt())
             session["username"] = request.form["username"]
-            existing_email = users.find_one({"email" : request.form["u_email"]})
+            existing_email = users.find_one({"email": request.form["u_email"]})
             # if no email matches the one given
             if existing_email is None:
-                users.insert({"username" : request.form["username"], "password" : hashpass, "email" : request.form["u_email"]})
+                users.insert({"username": request.form["username"],
+                             "password": hashpass,
+                              "email": request.form["u_email"]})
                 session["email"] = request.form["u_email"]
                 flash("Welcome " + session["username"])
                 return redirect(url_for("home"))
@@ -212,7 +220,8 @@ def movie_page(id):
         one_review = one_review
     # passes the variable to jinja function in html to for loop the reviews
     review_by_id = review_db.find({"movie_id": id})
-    return render_template("test.html", id=id, review_by_id=review_by_id, one_review=one_review, av_rating=av_rating)
+    return render_template("test.html", id=id, review_by_id=review_by_id,
+                           one_review=one_review, av_rating=av_rating)
 
 # Users can leave a review and rating of any movies they choose
 @app.route('/review', methods=['POST', 'GET'])

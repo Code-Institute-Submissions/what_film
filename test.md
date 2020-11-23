@@ -10,6 +10,9 @@
 <p><a href="#testing-against-user-stories"><strong>Testing Against User Stories</strong></a></p>
 </li>
 <li>
+<p><a href="#auto-testing"><strong>Automated Testing</strong></a></p>
+</li>
+<li>
 <p><a href="#manual-testing"><strong>Manual Testing</strong></a></p>
 <ul>
 <li>
@@ -122,6 +125,9 @@
 </ul>
 </li>
 </ol>
+<h2><a id="user-content-manual-testing" class="anchor" aria-hidden="true" href="#auto-testing"></a>Automated Testing</h2>
+<p>Using pythons built-in <a href="https://docs.python.org/3/library/unittest.html" rel="nofollow">Unit Test Framework</a>, automated tests were carried out on routes. A testcase was created by subclassing unittest.TestCase.</p>
+<p>Automated tests were setup and confirmed that all routes behaved correctly i.e 200 - route ok.</p>
 <h2><a id="user-content-manual-testing" class="anchor" aria-hidden="true" href="#manual-testing"></a>Manual Testing</h2>
 <p>I have included the manual testing processes which took place during the development stage to ensure that all aspects of the site work as intended.</p>
 <h3><a id="user-content-responsive-design-testing" class="anchor" aria-hidden="true" href="#responsive-design-testing"></a>Responsive Design Testing</h3>
