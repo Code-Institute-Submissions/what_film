@@ -48,7 +48,6 @@ function renderMovies(data) {
     moviesContainer.appendChild(moviesBlock);
 }
 
-
 // Render and display the searched movie block
 function renderSearchMovies(data) {
     if ((window.location.pathname == '/' || window.location.pathname == '/home')) {
@@ -78,8 +77,6 @@ function generateMoviesBlock(data) {
     let movieSectionAndContent = createMovieContainer(section);
     return movieSectionAndContent;
 }
-
-
 
 // Inserting section before content element
 function createMovieContainer(section) {
@@ -167,7 +164,6 @@ $(closeFlash).click(function(){
 });
 
 // Form validations
-
 function validateReview() {
     let x = document.forms['reviewForm']['review'].value;
     let y = x.split(' ').join('');
