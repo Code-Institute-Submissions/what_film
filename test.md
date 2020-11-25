@@ -147,15 +147,38 @@
 <p>I have included the manual testing processes which took place during the development stage to ensure that all aspects of the site work as intended.</p>
 <h3><a id="user-content-responsive-design-testing" class="anchor" aria-hidden="true" href="#responsive-design-testing"></a>Responsive Design Testing</h3>
 <p>During the development and testing phase of the site, I used Google Chrome Dev Tools to test the layout as I built my code and viewed each stage on different screen displays to makesure the site is optimized for multiple platforms.</p>
-<p>All testing was performed using:</p>
+<h4><a id="responsivness" class="anchor" aria-hidden="true" href="#responsivness"></a>Responsiveness</h4>
+<p>I tested the application over multiple devices to ensure a greater audience of users. There are many different devices on the market, so I wanted to makesure all users could easily navigate and use all the features of the application.</p>
+<p>The main things I tested for was the overall layout of the pages, so they worked well on different screen sizes. I also wanted to makesure the forms were easily readable and useable, as they were an important feature in the applicaton and also all the text on the site needed to be readable on all devices.</p>
 <ul>
-<li>Google Chrome</li>
-<li>Explorer</li>
-<li>Mozilla Firefox</li>
-<li>Safari</li>
-<li>Desktop - Two different screen sizes.</li>
-<li>Mobile Phones - All inclusive devices provided by Chrome dev tools and on an actual iPhone 12 pro.</li>
-<li>Tablets - All inclusive devices provided by Chrome Dev Tools as well as an iPad Air.</li>
+<li>Desktop screen sizes 1400 x 700  and 1280 x 800- I tested these sizes to makesure the site adapted to smaller and larger monitors, no issues were found.</li>
+<li>
+<p>Mobile devices:</p>
+<ul>
+<li>Moto g4 - No issues found.</li>
+<li>Galaxy S5 - No issues found.</li>
+<li>Pixel 2 - No issues found.</li>
+<li>All iphone sizes - Only issues on iphone x and above had some sizing issues with allot of empty space, but css styling was used to prevent it.</li>
+</ul>
+</li>
+<li>
+<p>Tablet devices tested were:</p>
+<ul>
+<li>Ipad - No issues found.</li>
+<li>Ipad Pro - The logo in the navbar was far too small and also the layout was styled like a desktop on movie information page, so a media query was put in place to fix these issues.</li>
+<li>Surface Duo - No issues found.</li>
+<li>Galaxy Fold - No issues found.</li>
+</ul>
+</li>
+</ul>
+<p>The physical devices tested on were a Macbook Air ,Samsung S20, iPhone 12 pro, and an iPad Air.</p>
+<h4><a id="browser-compatibilty" class="anchor" aria-hidden="true" href="#browser-compatibilty"></a>Broswer compatibilty</h4>
+<p>I tested the application over multiple browsers to makesure all fonts, images, and features worked on a variety of browsers.</p>
+<p>Testing was carried out on the following browsers:</p>
+<ul>
+<li>Google Chrome - No issues were found.</li>
+<li>Mozilla Firefox - No issues were found.</li>
+<li>Safari - No issues were found.</li>
 </ul>
 <h4><a id="user-content-overview" class="anchor" aria-hidden="true" href="#overview"></a>Overview</h4>
 <p>What Film? was designed and built to be displayed and used on multiple devices such as mobile phones, tablets, desktops.</p>
@@ -371,39 +394,6 @@
 </ul>
 </li>
 </ol>
-<h4><a id="responsivness" class="anchor" aria-hidden="true" href="#responsivness"></a>Responsiveness</h4>
-<p>I tested the application over multiple devices to ensure a greater audience of users. There are many different devices on the market, so I wanted to makesure all users could easily navigate and use all the features of the application.</p>
-<p>The main things I tested for was the overall layout of the pages, so they worked well on different screen sizes. I also wanted to makesure the forms were easily readable and useable, as they were an important feature in the applicaton and also all the text on the site needed to be readable on all devices.</p>
-<ul>
-<li>Desktop screen sizes 1400 x 700  and 1280 x 800- I tested these sizes to makesure the site adapted to smaller and larger monitors, no issues were found.</li>
-<li>
-<p>Mobile devices:</p>
-<ul>
-<li>Moto g4 - No issues found.</li>
-<li>Galaxy S5 - No issues found.</li>
-<li>Pixel 2 - No issues found.</li>
-<li>All iphone sizes - Only issues on iphone x and above had some sizing issues with allot of empty space, but css styling was used to prevent it.</li>
-</ul>
-</li>
-<li>
-<p>Tablet devices tested were:</p>
-<ul>
-<li>Ipad - No issues found.</li>
-<li>Ipad Pro - The logo in the navbar was far too small and also the layout was styled like a desktop on movie information page, so a media query was put in place to fix these issues.</li>
-<li>Surface Duo - No issues found.</li>
-<li>Galaxy Fold - No issues found.</li>
-</ul>
-</li>
-</ul>
-<p>The physical devices tested on were a Macbook Air ,Samsung S20, iPhone 12 pro, and an iPad Air.</p>
-<h4><a id="browser-compatibilty" class="anchor" aria-hidden="true" href="#browser-compatibilty"></a>Broswer compatibilty</h4>
-<p>I tested the application over multiple browsers to makesure all fonts, images, and features worked on a variety of browsers.</p>
-<p>Testing was carried out on the following browsers:</p>
-<ul>
-<li>Google Chrome - No issues were found.</li>
-<li>Mozilla Firefox - No issues were found.</li>
-<li>Safari - No issues were found.</li>
-</ul>
 <h3><a id="user-content-additional-testing" class="anchor" aria-hidden="true" href="#additional-testing"></a>Additional Testing</h3>
 <p>I asked my friends and family to try the quiz out, and ask for their feedback on how it functioned on their personal device and how they found the game in general.</p>
 </article>
