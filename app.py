@@ -2,7 +2,9 @@ import os
 import bcrypt
 from decouple import config
 from flask_pymongo import PyMongo
-from flask import Flask, render_template, flash, redirect, session, url_for, request
+from flask import Flask, render_template, flash, \
+    redirect, session, url_for, request
+
 
 app = Flask(__name__)
 app.secret_key = config('SECRET_KEY')
@@ -11,20 +13,23 @@ app.config["MONGO_URI"] = config('MONGO_URI')
 
 mongo = PyMongo(app)
 
+
 @app.route('/')
 # Takes user to the home-page
 @app.route('/home')
-def home():   
+def home():
     # checks if username is in session and renders the home page
     if 'username' in session:
-        user = 'username' 
+        user = 'username'
     return render_template("index.html")
+
 
 # Takes user to login screen when login button is pressed
 @app.route('/login_button')
-def login_button():  
+def login_button():
     # Login button takes you to login.html
-    return render_template("login.html")  
+    return render_template("login.html")
+
 
 # Logs user in if credentials are recognised
 @app.route('/login', methods=['POST', 'GET'])
@@ -42,6 +47,7 @@ def login():
     flash("Invalid Username/Password")
     return redirect(url_for("login_button"))
 
+
 # logs user out
 @app.route('/logout')
 def logout():
@@ -50,15 +56,18 @@ def logout():
     flash("You are logged out")
     return redirect(url_for("home"))
 
+
 # displays users account information
 @app.route('/account', methods=['POST', 'GET'])
 def account():
     if 'username' in session:
-        # checks if username is in session and then renders the information for that user
+        # checks if username is in session and then
+        # renders the information for that user
         user = mongo.db.users
         active_user = user.find({"username": session['username']})
         return render_template("account.html", account=active_user)
     return render_template("login.html")
+
 
 # delete users account and reviews they have made
 @app.route('/delete_account', methods=['POST', 'GET'])
@@ -68,7 +77,8 @@ def delete_account():
     logged_user = users.find_one({"username": session['username']})
     if bcrypt.hashpw(request.form['old_password'].encode('utf-8'),
                      logged_user['password']) == logged_user['password']:
-        # if the password matches the stored password it will delete the user and their reviews
+        # if the password matches the stored password
+        # it will delete the user and their reviews
         myquery = {"username": session['username']}
         users.delete_one(myquery)
         reviews.delete_many(myquery)
@@ -78,6 +88,7 @@ def delete_account():
     # if password is incorrect it flashes message incorrect password
     flash("Incorrect Password")
     return redirect(url_for("account"))
+
 
 # updates users account details on request
 @app.route('/update_account', methods=['POST', 'GET'])
@@ -89,85 +100,105 @@ def update_account():
                      logged_user['password']) == logged_user['password']:
         hashpass = bcrypt.hashpw(request.form["new_password"].encode("utf-8"),
                                  bcrypt.gensalt())
-        oldhashpass = bcrypt.hashpw(request.form["old_password"].encode("utf-8"),
-                                    bcrypt.gensalt())
-        # if a new username, email and password has been given, it updates them all
-        if len(request.form["new_username"]) >= 1 and len(request.form["new_email"]) >= 1 and len(request.form["new_password"]) >= 1:
+        oldhashpass = (bcrypt.hashpw(request.form["old_password"]
+                                     .encode("utf-8"), bcrypt.gensalt()))
+        # if a new username, email and password
+        # has been given, it updates them all
+        if (len(request.form["new_username"]) >= 1 and
+            len(request.form["new_email"]) >= 1 and
+                len(request.form["new_password"]) >= 1):
             users.update({'username': session['username']},
-            {
-                'username': request.form.get('new_username'),
-                'email': request.form.get('new_email'),
-                'password': hashpass
-            })
+                         {
+                             'username': request.form.get('new_username'),
+                             'email': request.form.get('new_email'),
+                             'password': hashpass
+                         })
             session['username'] = request.form.get('new_username')
             flash("Your account details have been updated")
             return redirect(url_for("home"))
-        # if a new username and email has been given, but password has not, it updates them all but the password
-        if len(request.form["new_username"]) >= 1 and len(request.form["new_email"]) >= 1 and len(request.form["new_password"]) < 1:
+        # if a new username and email has been given,
+        # but password has not, it updates them all but the password
+        if (len(request.form["new_username"]) >= 1 and
+            len(request.form["new_email"]) >= 1 and
+                len(request.form["new_password"]) < 1):
             users.update({'username': session['username']},
-            {
-                'username': request.form.get('new_username'),
-                'email': request.form.get('new_email'),
-                'password': oldhashpass
-            })
+                         {
+                             'username': request.form.get('new_username'),
+                             'email': request.form.get('new_email'),
+                             'password': oldhashpass
+                         })
             session['username'] = request.form.get('new_username')
             flash("Your account details have been updated")
             return redirect(url_for("home"))
-        # if a new username and password has been given, but email has not, it updates them all but the email
-        if len(request.form["new_username"]) >= 1 and len(request.form["new_email"]) < 1 and len(request.form["new_password"]) >= 1:
+        # if a new username and password has been given,
+        # but email has not, it updates them all but the email
+        if (len(request.form["new_username"]) >= 1 and
+            len(request.form["new_email"]) < 1 and
+                len(request.form["new_password"]) >= 1):
             users.update({'username': session['username']},
-            {
-                'username': request.form.get('new_username'),
-                'email': request.form.get('old_email'),
-                'password': hashpass
-            })
+                         {
+                             'username': request.form.get('new_username'),
+                             'email': request.form.get('old_email'),
+                             'password': hashpass
+                         })
             session.clear()
             flash("Your account details have been updated")
             return redirect(url_for("home"))
-        # if a new password and email has been given, but username has not, it updates them all but the username
-        if len(request.form["new_username"]) < 1 and len(request.form["new_email"]) >= 1 and len(request.form["new_password"]) >= 1:
+        # if a new password and email has been given,
+        # but username has not, it updates them all but the username
+        if (len(request.form["new_username"]) < 1 and
+            len(request.form["new_email"]) >= 1 and
+                len(request.form["new_password"]) >= 1):
             users.update({'username': session['username']},
-            {
-                'username': session['username'],
-                'email': request.form.get('new_email'),
-                'password': hashpass
-            }) 
+                         {
+                             'username': session['username'],
+                             'email': request.form.get('new_email'),
+                             'password': hashpass
+                         })
             flash("Your account details have been updated")
             return redirect(url_for("home"))
         # if only a new username is given, only that will be updated
-        if len(request.form["new_username"]) >= 1 and len(request.form["new_email"]) < 1 and len(request.form["new_password"]) < 1:
-            users.update({'username': session['username']}, 
-            {
-                'username': request.form.get('new_username'),
-                'email': request.form.get('old_email'),
-                'password': oldhashpass
-            })
+        if (len(request.form["new_username"]) >= 1 and
+            len(request.form["new_email"]) < 1 and
+                len(request.form["new_password"]) < 1):
+            users.update({'username': session['username']},
+                         {
+                             'username': request.form.get('new_username'),
+                             'email': request.form.get('old_email'),
+                             'password': oldhashpass
+                         })
             session['username'] = request.form.get('new_username')
             flash("Your account details have been updated")
             return redirect(url_for("home"))
         # if only a new email is given, only that will be updated
-        if len(request.form["new_username"]) < 1 and len(request.form["new_email"]) >= 1 and len(request.form["new_password"]) < 1:
-            users.update({'username': session['username']}, 
-            {
-                'username': session['username'],
-                'email': request.form.get('new_email'),
-                'password': oldhashpass
-            })  
+        if (len(request.form["new_username"]) < 1 and
+            len(request.form["new_email"]) >= 1 and
+                len(request.form["new_password"]) < 1):
+            users.update({'username': session['username']},
+                         {
+                             'username': session['username'],
+                             'email': request.form.get('new_email'),
+                             'password': oldhashpass
+                         })
             flash("Your account details have been updated")
             return redirect(url_for("home"))
         # if only a new password is given, only that will be updated
-        if len(request.form["new_username"]) < 1 and len(request.form["new_email"]) < 1 and len(request.form["new_password"]) >= 1:
-            users.update({'username': session['username']}, 
-            {
-                'username': session['username'],
-                'email': request.form.get('old_email'),
-                'password': hashpass
-            })
+        if (len(request.form["new_username"]) < 1 and
+            len(request.form["new_email"]) < 1 and
+                len(request.form["new_password"]) >= 1):
+            users.update({'username': session['username']},
+                         {
+                             'username': session['username'],
+                             'email': request.form.get('old_email'),
+                             'password': hashpass
+                         })
             flash("Your account details have been updated")
             return redirect(url_for("home"))
-    # if password was not entered correctly, it will flash message incorrect password
+    # if password was not entered correctly,
+    # it will flash message incorrect password
     flash("Incorrect Password")
     return redirect(url_for("account"))
+
 
 # registration form for new users to create an account
 @app.route('/register', methods=['POST', 'GET'])
@@ -189,13 +220,16 @@ def register():
                 session["email"] = request.form["u_email"]
                 flash("Welcome " + session["username"])
                 return redirect(url_for("home"))
-            # if email is already in use, flashes message "That email already exists!"
+            # if email is already in use,
+            # flashes message "That email already exists!"
             flash("That email already exists!")
             return render_template("register.html")
-        # if username is already in use, flashes message "That username already exists!"
+        # if username is already in use,
+        # flashes message "That username already exists!"
         flash("That username already exists!")
         return render_template("register.html")
     return render_template("register.html")
+
 
 # opens an information page on the movie selected
 @app.route('/movie/<id>')
@@ -204,16 +238,19 @@ def movie_page(id):
     # takes the id from url which is given from Javascript
     review_id = review_db.find({"movie_id": id})
     total = 0
-    # if there is a review stored in the database matching the same movie id, get all ratings and reviews
+    # if there is a review stored in the database matching the same movie id,
+    # get all ratings and reviews
     for reviews in review_id:
         ratings = reviews["rating"]
         one_review = reviews["review"]
         total += int(ratings)
-    # if there are none matching that movie id, it will show no rating and no review
+    # if there are none matching that movie id,
+    # it will show no rating and no review
     if total == 0:
         av_rating = "No Rating"
         one_review = ""
-    # if there is one or more found it averages the ratings and rounds it to one decimal place
+    # if there is one or more found
+    # it averages the ratings and rounds it to one decimal place
     else:
         average = total / review_id.count()
         av_rating = str(round(average, 1))
@@ -222,6 +259,7 @@ def movie_page(id):
     review_by_id = review_db.find({"movie_id": id})
     return render_template("test.html", id=id, review_by_id=review_by_id,
                            one_review=one_review, av_rating=av_rating)
+
 
 # Users can leave a review and rating of any movies they choose
 @app.route('/review', methods=['POST', 'GET'])
@@ -249,7 +287,8 @@ def review():
     flash("Please login to write a review")
     return render_template("login.html")
 
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
-    port=int(os.environ.get('PORT')),
-    debug=config('DEBUG', cast=bool))
+            port=int(os.environ.get('PORT')),
+            debug=config('DEBUG', cast=bool))

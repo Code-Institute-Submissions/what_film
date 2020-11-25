@@ -287,7 +287,7 @@
 <p>JavaScript - All my script was run through the <a href="https://jshint.com/" rel="nofollow">JSHint</a> validator to makesure it was clean and valid.</p>
 </li>
 <li>
-<p>Python - All my script was run through the <a href="https://extendsclass.com/python-tester.html" rel="nofollow">Python tester</a> to make sure all my Python syntax had no faults.</p>
+<p>Python - All my script was run through the <a href="http://pep8online.com/" rel="nofollow">Pep8</a> to make sure all my Python code had no issues.</p>
 </li>
 </ul>
 <h3><a id="user-content-manual-testing" class="anchor" aria-hidden="true" href="#manual-testing"></a>Manual Testing</h3>

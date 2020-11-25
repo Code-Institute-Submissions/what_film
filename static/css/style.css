@@ -393,6 +393,7 @@ label[id="review-label"] {
 
 .table-tr {
 	background-color: black!important;
+    border-bottom: 1pt solid #ffffff;
 }
 
 .th-user {
@@ -417,6 +418,10 @@ label[id="review-label"] {
 
 .td-user-rating {
 	font-size: 30px;
+}
+
+.border-bottom {
+    border-bottom: 1pt solid #ffffff;
 }
 
 
