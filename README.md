@@ -41,9 +41,6 @@
 </li>
 <li>
 <p><a href="#testing"><strong>Testing</strong></a></p>
-<ul>
-<li><a href="#manual-testing"><strong>Manual Testing</strong></a></li>
-</ul>
 </li>
 <li>
 <p><a href="#deployment"><strong>Deployment</strong></a></p>
@@ -279,7 +276,6 @@
 </li>
 </ul>
 <h2><a id="user-content-testing" class="anchor" aria-hidden="true" href="#testing"></a>Testing</h2>
-<h3><a id="user-content-manual-testing" class="anchor" aria-hidden="true" href="#manual-testing"></a>Manual Testing</h3>
 <p>You can view the testing done in the <a href="https://github.com/lewejuice/what_film/blob/master/test.md">test.md</a> where I have written in-depth on the various tests I have performed.</p>
 <h2><a id="user-content-deployment" class="anchor" aria-hidden="true" href="#deployment"></a>Deployment</h2>
 <p>I developed this project using <a href="https://www.gitpod.io/" rel="nofollow">Gitpod</a>. Version control was done using git and hosting the repository was done through <a href="https://github.com/lewejuice/what_film">repository in GitHub</a>.</p>
@@ -384,7 +380,7 @@
 <p>An extremely useful tool I used was <a href="https://stackoverflow.com/" rel="nofollow">Stack Overflow</a>, for help with many syntax and functions.</p>
 <ul>
 <li>Help with <a href="https://stackoverflow.com/questions/26935550/html-pattern-attribute-match-or-allow-blank" rel="nofollow">form validation.</a></li>
-<li>Help with using the <a href="https://stackoverflow.com/questions/155188/trigger-a-button-click-with-javascript-on-the-enter-key-in-a-text-box" rel="nofollow">enter button</a> to search movies.</li>
+<li>Help with using the <a href="https://stackoverflow.com/questions/155188/trigger-a-button-click-with-javascript-on-the-enter-key-in-a-text-box" rel="nofollow">enter button</a> to submit movie search.</li>
 </ul>
 </li>
 <li>

@@ -43,7 +43,7 @@ class testingApp(unittest.TestCase):
 
         print('All the tests passed')
 
-# Run Tests
+# To run tests type python3 test_whatfilm.py into the CLI
 
 if __name__ == '__main__':
     unittest.main()

@@ -36,7 +36,8 @@
 <li><a href="#overview"><strong>Modal Testing</strong></a></li>
 <li><a href="#python-testing"><strong>Python Testing</strong></a></li>
 <li><a href="#game-functionality-testing"><strong>Game Functionality Testing</strong></a></li>
-<li><a href="#responsivness-and-browser-compatibilty"><strong>Responsiveness and Broswer compatibilty</strong></a></li>
+<li><a href="#responsivness"><strong>Responsiveness</strong></a></li>
+<li><a href="#browser-compatibilty"><strong>Broswer compatibilty</strong></a></li>
 </ul>
 </li>
 <li>
@@ -139,7 +140,9 @@
 </ol>
 <h2><a id="auto-testing" class="anchor" aria-hidden="true" href="#auto-testing"></a>Automated Testing</h2>
 <p>Using pythons built-in <a href="https://docs.python.org/3/library/unittest.html" rel="nofollow">Unit Test Framework</a>, automated tests were carried out on routes. A testcase was created by subclassing unittest.TestCase.</p>
+<p>To test the app routes, the test runs each app route to makesure there are no page loading errors.
 <p>Automated tests were setup and confirmed that all routes behaved correctly i.e 200 - route ok.</p>
+<p>To run the test just simply type in the CLI - <code>python3 test_whatfilm.py</code></p>
 <h2><a id="user-content-manual-testing" class="anchor" aria-hidden="true" href="#manual-testing"></a>Manual Testing</h2>
 <p>I have included the manual testing processes which took place during the development stage to ensure that all aspects of the site work as intended.</p>
 <h3><a id="user-content-responsive-design-testing" class="anchor" aria-hidden="true" href="#responsive-design-testing"></a>Responsive Design Testing</h3>
@@ -368,34 +371,39 @@
 </ul>
 </li>
 </ol>
-<h4><a id="responsivness-and-browser-compatibilty" class="anchor" aria-hidden="true" href="#responsivness-and-browser-compatibilty"></a>Responsiveness and Broswer compatibilty</h4>
-<p>Tests were carried out on Desktop, Mobile phone, and tablets. They were also tested on a variety of browsers: Google Chrome, Mozilla Firefox and Safari.</p>
-<p>The physical mobile/tablet devices tested on were a Samsung S20, iPhone 12 pro, and an iPad Air and also the devices included in Chrome Dev tools.</p>
-<ol>
-<li>
-<p><strong>Page Render</strong></p>
+<h4><a id="responsivness" class="anchor" aria-hidden="true" href="#responsivness"></a>Responsiveness</h4>
+<p>I tested the application over multiple devices to ensure a greater audience of users. There are many different devices on the market, so I wanted to makesure all users could easily navigate and use all the features of the application.</p>
+<p>The main things I tested for was the overall layout of the pages, so they worked well on different screen sizes. I also wanted to makesure the forms were easily readable and useable, as they were an important feature in the applicaton and also all the text on the site needed to be readable on all devices.</p>
 <ul>
+<li>Desktop screen sizes 1400 x 700  and 1280 x 800- I tested these sizes to makesure the site adapted to smaller and larger monitors, no issues were found.</li>
 <li>
-<p>On all broswers and devices, pages all rendered correctly, apart from Ipad pro where there seemed to be allot of empty space on the page.</p>
-</li>
-<li>
-<p>To fix this issue, I changed the CSS styling for that specific screen size to enlarge font-sizes and images to fill more on the screen.</p>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>URL's</strong></p>
+<p>Mobile devices:</p>
 <ul>
-<li>
-<p>I tested to makesure all page URL's worked correctly accross all devices and browsers, which they did.</p>
-</li>
-<li>
-<p>No issues were found</p>
-</li>
-</ul>
+<li>Moto g4 - No issues found.</li>
+<li>Galaxy S5 - No issues found.</li>
+<li>Pixel 2 - No issues found.</li>
+<li>All iphone sizes - Only issues on iphone x and above had some sizing issues with allot of empty space, but css styling was used to prevent it.</li>
 </ul>
 </li>
-</ol>
+<li>
+<p>Tablet devices tested were:</p>
+<ul>
+<li>Ipad - No issues found.</li>
+<li>Ipad Pro - The logo in the navbar was far too small and also the layout was styled like a desktop on movie information page, so a media query was put in place to fix these issues.</li>
+<li>Surface Duo - No issues found.</li>
+<li>Galaxy Fold - No issues found.</li>
+</ul>
+</li>
+</ul>
+<p>The physical devices tested on were a Macbook Air ,Samsung S20, iPhone 12 pro, and an iPad Air.</p>
+<h4><a id="browser-compatibilty" class="anchor" aria-hidden="true" href="#browser-compatibilty"></a>Broswer compatibilty</h4>
+<p>I tested the application over multiple browsers to makesure all fonts, images, and features worked on a variety of browsers.</p>
+<p>Testing was carried out on the following browsers:</p>
+<ul>
+<li>Google Chrome - No issues were found.</li>
+<li>Mozilla Firefox - No issues were found.</li>
+<li>Safari - No issues were found.</li>
+</ul>
 <h3><a id="user-content-additional-testing" class="anchor" aria-hidden="true" href="#additional-testing"></a>Additional Testing</h3>
 <p>I asked my friends and family to try the quiz out, and ask for their feedback on how it functioned on their personal device and how they found the game in general.</p>
 </article>
