@@ -42,7 +42,6 @@
 <li>
 <p><a href="#testing"><strong>Testing</strong></a></p>
 <ul>
-<li><a href="#code-validation"><strong>Code Validation</strong></a></li>
 <li><a href="#manual-testing"><strong>Manual Testing</strong></a></li>
 </ul>
 </li>
@@ -55,8 +54,8 @@
 <li>
 <p><a href="#credits"><strong>Credits</strong></a></p>
 <ul>
-<li><a href="#api"><strong>Music and Sound Effects</strong></a></li>
-<li><a href="#images"><strong>Images</strong></a></li>
+<li><a href="#api"><strong>Images and Data</strong></a></li>
+<li><a href="#logo"><strong>Fonts</strong></a></li>
 <li><a href="#code-credits"><strong>Code Credits</strong></a></li>
 <li><a href="#learning-resources"><strong>Learning Resources</strong></a></li>
 <li><a href="#acknowledgements"><strong>Acknowledgements</strong></a></li>
@@ -72,6 +71,12 @@
 <ul>
 <li>
 <p>I want the landing page to clearly represent what type of application im on, and give me options of engagment instantly, as this will encourage me to go on further and explore the site.</p>
+</li>
+<li>
+<p>I want to be able to sign in and out of my account.</p>
+</li>
+<li>
+<p>I want to be able to search for a particular movie.</p>
 </li>
 <li>
 <p>Manouvering around the site needs to be made clear and instructive wihtout any confusion.</p>
@@ -181,7 +186,7 @@
 <p><a href="https://autoprefixer.github.io/" rel="nofollow">Autoprefixer</a> - I used this to make sure all CSS prefixes were exact for the best optimization.</p>
 </li>
 <li>
-<p><a href="https://extendsclass.com/python-tester.html" rel="nofollow">Python tester</a> - I used this to make sure all my Python syntax had no faults.</p>
+<p><a href="http://pep8online.com/" rel="nofollow">Pep8</a> - I used this to make sure my Python code had no errors.</p>
 </li>
 <li>
 <p><a href="https://codebeautify.org/jsvalidate" rel="nofollow">Code Beautify/JavaScript</a> - I used this to make sure all my JavaScript had no faults.</p>
@@ -274,22 +279,6 @@
 </li>
 </ul>
 <h2><a id="user-content-testing" class="anchor" aria-hidden="true" href="#testing"></a>Testing</h2>
-<h3><a id="user-content-code-validation" class="anchor" aria-hidden="true" href="#code-validation"></a>Code Validation</h3>
-<p>All code written has been thoroughly validated and passed through the following online validators:</p>
-<ul>
-<li>
-<p>HTML - All code was run through the <a href="https://validator.w3.org/" rel="nofollow">W3C HTML Validator</a> to ensure it was valid code and no errors were made.</p>
-</li>
-<li>
-<p>CSS - All styling was run through the <a href="https://jigsaw.w3.org/css-validator/" rel="nofollow">W3C CSS Validator</a> to ensure it was valid and no errors were made.</p>
-</li>
-<li>
-<p>JavaScript - All my script was run through the <a href="https://jshint.com/" rel="nofollow">JSHint</a> validator to makesure it was clean and valid.</p>
-</li>
-<li>
-<p>Python - All my script was run through the <a href="http://pep8online.com/" rel="nofollow">Pep8</a> to make sure all my Python code had no issues.</p>
-</li>
-</ul>
 <h3><a id="user-content-manual-testing" class="anchor" aria-hidden="true" href="#manual-testing"></a>Manual Testing</h3>
 <p>You can view the testing done in the <a href="https://github.com/lewejuice/what_film/blob/master/test.md">test.md</a> where I have written in-depth on the various tests I have performed.</p>
 <h2><a id="user-content-deployment" class="anchor" aria-hidden="true" href="#deployment"></a>Deployment</h2>
@@ -321,7 +310,7 @@
 <p>If you wanted to run this project locally and not use GitHub Pages, you can follow these steps:</p>
 <ol>
 <li>
-<p>Go to the repository for <a href="https://github.com/lewejuice/starwars-quiz/"><strong>Star Wars Quiz</strong></a>.</p>
+<p>Go to the repository for <a href="https://github.com/lewejuice/what_film"><strong>What Film?</strong></a>.</p>
 </li>
 <li>
 <p>Below the repository name, you will see a green button with the text <strong>Code</strong>.</p>
@@ -343,14 +332,30 @@
 <ul>
 <li>
 <p>Here is an example:</p>
-<p><code>git clone https://github.com/lewejuice/what_film.git</code></p>
+<p><code>CLI: git clone https://github.com/lewejuice/what_film.git</code></p>
 </li>
 </ul>
 </li>
 <li>
 <p>You can cut ties with the original GitHub repository by typing in:</p>
 <ul>
-<li><code>git remote rm origin</code></li>
+<li><code>CLI: git remote rm origin</code></li>
+</ul>
+</li>
+<li>
+<p>Add a requirments.txt file using:</p>
+<ul>
+<li><code>CLI: pip3 freeze --local > requirements.txt</code></p></li>
+</ul>
+</li>
+<li>
+<p>Add enviroment variables following these steps:</p>
+<ul>
+<li>Create a .env file</li>
+<li>Define the variables with no spaces inside the file</li>
+<li><code>CLI: pip3 install python-decouple</code></li>
+<li>In python insert "from decouple import config"</li>
+<li>Write your enviroment variables in this format inside your python file. <code>SECRET_KEY = config('SECRET_KEY')</code></li>
 </ul>
 </li>
 </ol>
@@ -377,9 +382,17 @@
 </li>
 <li>
 <p>An extremely useful tool I used was <a href="https://stackoverflow.com/" rel="nofollow">Stack Overflow</a>, for help with many syntax and functions.</p>
+<ul>
+<li>Help with <a href="https://stackoverflow.com/questions/26935550/html-pattern-attribute-match-or-allow-blank" rel="nofollow">form validation.</a></li>
+<li>Help with using the <a href="https://stackoverflow.com/questions/155188/trigger-a-button-click-with-javascript-on-the-enter-key-in-a-text-box" rel="nofollow">enter button</a> to search movies.</li>
+</ul>
 </li>
 <li>
-<p>I used <a href="https://www.youtube.com/" rel="nofollow">Youtube</a>, for useful tutorials if I wanted to implement something new that I didn't understand.</p>
+<p>I used <a href="https://www.youtube.com/" rel="nofollow">Youtube</a>, here some useful youtube tutorials i followed for extra information.</p>
+<ul>
+<li>Help with <a href="https://www.youtube.com/watch?v=6tNS--WetLI&t=1395s" rel="nofollow">Unit testing.</a></li>
+<li>Help with <a href="https://www.youtube.com/watch?v=myqfTX9ZbTs&t=445s" rel="nofollow">enviroment variables</a> via .env files.</li>
+</ul>
 </li>
 </ol>
 <h3><a id="user-content-acknowledgements" class="anchor" aria-hidden="true" href="#acknowledgements"></a>Acknowledgements</h3>

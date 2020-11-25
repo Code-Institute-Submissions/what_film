@@ -58,7 +58,7 @@
 <p>JavaScript - All my script was run through the <a href="https://jshint.com/" rel="nofollow">JSHint</a> & <a href="https://codebeautify.org/jsvalidate" rel="nofollow">Code Beautify/JavaScript</a> validators to ensure full functionality without errors.</p>
 </li>
 <li>
-<p>Python - All my Python code was run through the <a href="https://extendsclass.com/python-tester.html" rel="nofollow">Python tester</a> to ensure full functionality without errors.</p>
+<p>Python - All my Python code was run through the <a href="http://pep8online.com/" rel="nofollow">Pepe8</a> to ensure my Python code had full functionality without errors.</p>
 </li>
 </ul>
 <h2><a id="user-content-testing-against-user-stories" class="anchor" aria-hidden="true" href="#testing-against-user-stories"></a>Testing Against User Stories</h2>
@@ -71,6 +71,18 @@
 <li>The landing page has a variety of different movie posters that have different headings i.e. Trending movies, Popular movies etc. These movie posters instantly tell the user it is a movie related website.</li>
 <li>The dark deep red used for the navbar relates to the cinema curtains to add further to movie theme.</li>
 <li>The hover and scroll animations on the movie posters give the site a sleek professional feel to give users confidence in the sites ability.</li>
+</ul>
+</li>
+<li>
+<p>I want to be able to sign in and out of my account.</p>
+<ul>
+<li>A login and logout feature has been added so users can sign in and out with ease via the navbar.</li>
+</ul>
+</li>
+<li>
+<p>I want to be able to search for a particular movie.</p>
+<ul>
+<li>A search bar has been added on the homepage so a user can search for any movie they desire, and can submit their search via an enter key press or clicking the search button.</li>
 </ul>
 </li>
 <li>
