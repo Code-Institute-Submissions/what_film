@@ -18,6 +18,8 @@
 <li>
 <p><a href="#responsive-design-testing"><strong>Responsive Design Testing</strong></a></p>
 <ul>
+<li><a href="#responsivness"><strong>Responsiveness</strong></a></li>
+<li><a href="#browser-compatibilty"><strong>Broswer compatibilty</strong></a></li>
 <li><a href="#overview"><strong>Overview</strong></a>
 <ul>
 <li><a href="#landing-page"><strong>Landing Page</strong></a></li>
@@ -36,8 +38,6 @@
 <li><a href="#overview"><strong>Modal Testing</strong></a></li>
 <li><a href="#python-testing"><strong>Python Testing</strong></a></li>
 <li><a href="#game-functionality-testing"><strong>Game Functionality Testing</strong></a></li>
-<li><a href="#responsivness"><strong>Responsiveness</strong></a></li>
-<li><a href="#browser-compatibilty"><strong>Broswer compatibilty</strong></a></li>
 </ul>
 </li>
 <li>
