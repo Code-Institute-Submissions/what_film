@@ -4,7 +4,7 @@
 <div class="row account-form">
 <!-- View and edit account details form -->
     <form action="{{ url_for('update_account') }}" method="POST" class="col s12">
-    {% for user in account %}
+        {% for user in account %}
         <div class="row">
             <div class="col s12 l6">
                 <p id="username" class="account-current-detail capital">Username: {{ user.username }}</p>
@@ -41,7 +41,7 @@
         <div class="row center">
             <button class="button btn waves-effect waves-light account-btn" type="submit" name="submit">Submit</button>
         </div>  
-    {% endfor %}                
+        {% endfor %}                
     </form> 
     <!-- Button to show modal -->
     <div class="row center">
@@ -69,5 +69,4 @@
     </form>
     <button id="cancel-remove" class="button btn waves-effect waves-light modal-btn">Cancel</button>
 </div>
-
 {% endblock %}

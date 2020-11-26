@@ -191,6 +191,13 @@
 </ol>
 <h2><a id="user-content-features" class="anchor" aria-hidden="true" href="#features"></a>Features</h2>
 <h3><a id="user-content-existing-features" class="anchor" aria-hidden="true" href="#existing-features"></a>Existing Features</h3>
+<p>CRUD features</p>
+<ul>
+<li>Users can create their own personal account.</li>
+<li>User can post reviews and read reviews made by others</li>
+<li>Users can edit their account information i.e Username, password etc.</li>
+<li>User can delete thier accounts which also deletes the reviews they've made.</li>
+</ul>
 <p>Landing Page</p>
 <ul>
 <li>
@@ -349,6 +356,15 @@
 <ul>
 <li>Create a .env file</li>
 <li>Define the variables with no spaces inside the file</li>
+<li>
+<p>List of enviroment variables:</p>
+<ul>
+<li>MONGO_DB_NAME</li>
+<li>DEBUG</li>
+<li>MONGO_URI</li>
+<li>SECRET_KEY</li>
+</ul>
+</li>
 <li><code>CLI: pip3 install python-decouple</code></li>
 <li>In python insert "from decouple import config"</li>
 <li>Write your enviroment variables in this format inside your python file. <code>SECRET_KEY = config('SECRET_KEY')</code></li>

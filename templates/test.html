@@ -26,7 +26,7 @@
         <div class="col s12 center"><h2>Reviews</h2></div>
         <div class="col s12 center" id="reviews">
         <!-- Jinja functiin to display the reviews -->
-        {% if one_review|length >= 1 %}
+            {% if one_review|length >= 1 %}
             <table class="review-table centered">
                 <thead>
                     <tr class="border-bottom">
@@ -45,9 +45,9 @@
                     {% endfor %}
                 </tbody>
             </table>
-        {% else %}
+            {% else %}
             <h3>No Reviews</h3>
-        {% endif %}
+            {% endif %}
         </div>
     </div>
     <!-- Modal to write review and rate the movie out of 10 -->
@@ -83,6 +83,6 @@
         {% endif %}    
         <!-- Cancel review and close modal -->
         <button id="cancel-review" class="button btn waves-effect waves-light">Cancel</button>
-   </div>
+    </div>
 
 {% endblock %}

@@ -1,79 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <!-- Google fonts -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <!-- Materialize -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <!-- API key -->
-    <link href="https://api.themoviedb.org/3/movie/76341?api_key=7086f3df7f1d4285192dbd81ceafdd50" rel="stylesheet">
-    <!-- CSS file link -->
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css"/>
-    <title>What Film</title>
-</head>
-<body onload="renderMovieInfo()">
-    <header>
-        <!-- Navbar -->
-        <nav class="navvy">
-            <div class="nav-bar nav-wrapper">
-                <a href="{{url_for('home')}}" id="logo" class="brand-logo">WHAT FILM?</a>
-                <!-- Navbar for desktop -->
-                <a href="" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a class="nav-icon" href="{{url_for('home')}}">Home</a></li>
-                    <li><a class="nav-icon" href="{{url_for('account')}}">Account</a></li>
-                    {% if session["username"] %}
+    <head>
+        <!-- Google fonts -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <!-- Materialize -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <!-- API key -->
+        <link href="https://api.themoviedb.org/3/movie/76341?api_key=7086f3df7f1d4285192dbd81ceafdd50" rel="stylesheet">
+        <!-- CSS file link -->
+        <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css"/>
+        <title>What Film</title>
+    </head>
+    <body onload="renderMovieInfo()">
+        <header>
+            <!-- Navbar -->
+            <nav class="navvy">
+                <div class="nav-bar nav-wrapper">
+                    <a href="{{url_for('home')}}" id="logo" class="brand-logo">WHAT FILM?</a>
+                    <!-- Navbar for desktop -->
+                    <a href="" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a class="nav-icon" href="{{url_for('home')}}">Home</a></li>
+                        <li><a class="nav-icon" href="{{url_for('account')}}">Account</a></li>
+                        {% if session["username"] %}
                         <li><a class="nav-icon" href="{{url_for('logout')}}">Logout</a></li>
-                    {% else %}
+                        {% else %}
                         <li><a class="nav-icon" href="{{url_for('login_button')}}">Login</a></li>
-                    {% endif %}
-                </ul>
-                <!-- Navbar for smaller screens -->
-                <ul class="side-nav" id="mobile-demo">
-                    <li><a  href="{{url_for('home')}}">Home</a></li>
-                    <li><a href="{{url_for('account')}}">Account</a></li>
-                    {% if session["username"] %}
+                        {% endif %}
+                    </ul>
+                    <!-- Navbar for smaller screens -->
+                    <ul class="side-nav" id="mobile-demo">
+                        <li><a  href="{{url_for('home')}}">Home</a></li>
+                        <li><a href="{{url_for('account')}}">Account</a></li>
+                        {% if session["username"] %}
                         <li><a href="{{url_for('logout')}}">Logout</a></li>
-                    {% else %}
+                        {% else %}
                         <li><a href="{{url_for('login_button')}}">Login</a></li>
-                    {% endif %}
-                </ul>
-            </div>
-        </nav>
-    </header>
-    <!-- Jinja function to display flash messages -->
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            {% for message in messages %}
-            <div id="flash-pop" class="flashes flash-container center">
-                <h3 class="flash-content">{{ message }}</h3>
-                <button id="close-flash"><i class="material-icons x-flash">close</i></button>
-            </div>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
-    <div class="container">
-    {% block content %} 
-    {% endblock %}
-    </div>
-    <footer class="footer"><p class="cp-text center">© Copyright 2020  |  What film  |  Lewis Hamilton  |  All rights reserved.</p></footer>
-    <!-- Script tags -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="{{url_for('static', filename='js/api.js')}}"></script>    
-    <script src="{{url_for('static', filename='js/app.js')}}"></script>
-    <!-- Javascript function for materialize features -->
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('.collapsible').collapsible();
-            $('select').material_select();
-            $(".button-collapse").sideNav();
-        });
-    </script>
-</body>
-
+                        {% endif %}
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Jinja function to display flash messages -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                <div id="flash-pop" class="flashes flash-container center">
+                    <h3 class="flash-content">{{ message }}</h3>
+                    <button id="close-flash"><i class="material-icons x-flash">close</i></button>
+                </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <div class="container">
+        {% block content %} 
+        {% endblock %}
+        </div>
+        <footer class="footer"><p class="cp-text center">© Copyright 2020  |  What film  |  Lewis Hamilton  |  All rights reserved.</p></footer>
+        <!-- Script tags -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="{{url_for('static', filename='js/api.js')}}"></script>    
+        <script src="{{url_for('static', filename='js/app.js')}}"></script>
+        <!-- Javascript function for materialize features -->
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('.collapsible').collapsible();
+                $('select').material_select();
+                $(".button-collapse").sideNav();
+            });
+        </script>
+    </body>
 </html>

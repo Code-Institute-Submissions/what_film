@@ -2,22 +2,22 @@
 <!-- Login form -->
 <div class="row topper login-form form-container">
     <form method="POST" action="{{ url_for('login') }}" class="col s12">
-      <div class="row">
-        <div class="input-field center login-input">
-          <input class="validate" id="user_name" name="username" type="text">
-          <label class="login-label" for="user_name">Username</label>
+        <div class="row">
+            <div class="input-field center login-input">
+                <input class="validate" id="user_name" name="username" type="text">
+                <label class="login-label" for="user_name">Username</label>
+            </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="center input-field login-input">
-          <input id="password" type="password" name="password" class="validate">
-          <label class="login-label" for="password">Password</label>
+        <div class="row">
+            <div class="center input-field login-input">
+                <input id="password" type="password" name="password" class="validate">
+                <label class="login-label" for="password">Password</label>
+            </div>
         </div>
-      </div>
-      <!-- Login form submit button -->
-      <div class="row log-btn-container">
-          <button class="button center btn waves-effect waves-light login-btn" type="submit" name="action">Login</button>
-      </div>   
+        <!-- Login form submit button -->
+        <div class="row log-btn-container">
+            <button class="button center btn waves-effect waves-light login-btn" type="submit" name="action">Login</button>
+        </div>   
     </form>
     <!-- Link to register form -->
     <div>    
