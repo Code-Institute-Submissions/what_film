@@ -10,7 +10,7 @@
 <p>The application allows people to see honest reviews from everyday people, while also giving users a platform to share their own thoughts and debate with others.</p>
 <br>
 <p>I have used HTML, CSS, Materialize, jQuery, JavaScript, Jinja, Flask, MongoDB and Python for this project, which will form part of my ongoing portfolio of work.</p>
-<img src="images/what-film-mockup.jpg" alt="Desktop Demo" title="Desktop Demo" style="max-width:100%;">
+<img src="readme-files/what-film-mockup.jpg" alt="Desktop Demo" title="Desktop Demo" style="max-width:100%;">
 <br>
 <h3>Demo</h3>
 <p>A live demo can be found here <a href="https://what-film.herokuapp.com/" rel="nofollow" target="_blank">here</a>.</p>
