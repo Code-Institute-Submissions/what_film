@@ -24,6 +24,11 @@ def home():
     return render_template("index.html")
 
 
+@app.route('/error')
+def error():
+    return render_template("error.html")
+
+
 # Takes user to login screen when login button is pressed
 @app.route('/login_button')
 def login_button():

@@ -445,9 +445,21 @@ label[id="review-label"] {
 }
 
 
+/* error page */
+
+  .error-div {
+    padding-top: 12%;
+  }
+
+  .sad-face {
+      font-size: 200px;
+  }
+
+
 /* Smaller screen sizes  */
 
 @media only screen and (max-width: 1024px) {
+
   /* Navbar small  */
   .navvy {
     height: 150px;
@@ -477,6 +489,7 @@ label[id="review-label"] {
     font-weight: bold;
     font-size: 80px;
   }
+
   /* Home page small  */
   .topper {
     padding-top: 150px;
@@ -495,6 +508,7 @@ label[id="review-label"] {
     height: 100px;
     font-size: 30px;
   }
+
   /* Account page small  */
   .page-title {
     padding-top: 200px;
@@ -516,6 +530,7 @@ label[id="review-label"] {
   label[class="mob-labels"] {
     font-size: 30px;
   }
+
   /* Modals small  */
   .form-container {
     padding: 10vh 10vw 0;
@@ -567,6 +582,7 @@ label[id="review-label"] {
     font-size: 80px;
     padding-top: 100px;
   }
+
   /* Movie info page small  */
   #film-date {
     font-size: 40px;
@@ -594,6 +610,7 @@ label[id="review-label"] {
     width: 300px;
     height: 60px;
   }
+
   /* Review table small */
   .th-user {
     width: 10%;
@@ -618,6 +635,7 @@ label[id="review-label"] {
   .td-user-rating {
     font-size: 35px;
   }
+
   /* small login form */
   label[class="login-label"] {
     font-size: 40px !important;
@@ -644,11 +662,22 @@ label[id="review-label"] {
   .reg-btn {
     font-size: 40px;
   }
+
   /* small copy right footer */
   .cp-text {
     padding: 50px 0;
     color: #A9A9A9;
     font-size: 30px;
+  }
+
+  /* error page */
+  .error-div {
+    padding-top: 30%;
+    padding-bottom: 60%;
+  }
+
+  .sad-face {
+      padding-top: 50px;
   }
 }
 

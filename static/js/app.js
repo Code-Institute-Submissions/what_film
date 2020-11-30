@@ -28,8 +28,10 @@ function resetInput() {
 
 // Error message 
 function handleGeneralError(error) {
+    debugger;
     log('Error: ', error.message);
     alert(error.message || 'Internal Server');
+    window.location.pathname = "/error";
 }
 
 // Retrieve categorie title
