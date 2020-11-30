@@ -41,6 +41,9 @@
 </ul>
 </li>
 <li>
+<p><a href="#error-page"><strong>Error Page Testing</strong></a></p>
+</li>
+<li>
 <p><a href="#additional-testing"><strong>Additional Testing</strong></a></p>
 </li>
 </ul>
@@ -394,6 +397,9 @@
 </ul>
 </li>
 </ol>
+<h3><a id="error-page" class="anchor" aria-hidden="true" href="#error-page"></a>Error Page Testing</h3>
+<p>Incase the TMDB API went down for any kind of reason, I wanted to include an error page that the user gets taken to when it happens.</p>
+<p>To test the error page I purposely made faults in my code to retrieve information from the API to see if it loaded the error page, which it does correctly.</p>
 <h3><a id="user-content-additional-testing" class="anchor" aria-hidden="true" href="#additional-testing"></a>Additional Testing</h3>
 <p>I asked my friends and family to try the quiz out, and ask for their feedback on how it functioned on their personal device and how they found the game in general.</p>
 </article>

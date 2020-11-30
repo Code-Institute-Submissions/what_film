@@ -270,6 +270,18 @@
 <p>If delete account is selected and the password provided is correct, the users account details and reviews are then removed from the database.</p>
 </li>
 </ul>
+<p>Error page</p>
+<ul>
+<li>
+<p>Incase the TMDB API went down for any kind of reason, I wanted to include an error page that the user gets taken to when it happens.</p>
+</li>
+<li>
+<p>This is a custom page I have made to inform the user that the services of the site are currently down.</p>
+</li>
+<li>
+<p>The sad face emoji from Materialize that I have included, symbolises that something has gone wrong.</p>
+</li>
+</ul>
 <h3><a id="user-content-features-to-be-implemented" class="anchor" aria-hidden="true" href="#features-to-be-implemented"></a>Features To Be Implemented</h3>
 <ul>
 <li>
