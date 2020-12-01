@@ -15,6 +15,12 @@
 <h3>Demo</h3>
 <p>A live demo can be found here <a href="https://what-film.herokuapp.com/" rel="nofollow" target="_blank">here</a>.</p>
 <br>
+<h3>Database Schema</h3>
+<p><a href="https://en.wikipedia.org/wiki/MongoDB" rel="nofollow">MongoDB</a> was used to create the database for this website and it is hosted by Atlas.</p>
+<p>The final database schema consists of two collections which include users and reviews.</p>
+<p>Both collections are linked via the username but also the movieId in reviews links to the id of the movies provided by TMDB API.</p>
+<img src="readme-files/database-schema.png" alt="database-schema" title="database-schema" style="max-width:100%;">
+<br>
 <h2><a id="user-content-table-of-contents" class="anchor" aria-hidden="true" href="#table-of-contents"></a>Table of Contents</h2>
 <ol>
 <li>
